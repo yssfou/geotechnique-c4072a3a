@@ -114,7 +114,7 @@ export function HeroSection() {
           delay: 0.5
         }} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[{
-            value: "30+",
+            value: "15+",
             label: "Années d'Expérience"
           }, {
             value: "500+",
