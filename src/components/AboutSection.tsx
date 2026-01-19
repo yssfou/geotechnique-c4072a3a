@@ -6,7 +6,7 @@ const features = [
   {
     icon: Award,
     title: "Expertise Reconnue",
-    description: "Plus de 30 ans d'expérience dans le domaine géotechnique en Tunisie.",
+    description: "Depuis 2011, nous accompagnons vos projets géotechniques en Tunisie.",
   },
   {
     icon: Users,
@@ -63,7 +63,7 @@ export function AboutSection() {
               <strong className="text-foreground">EGG</strong> - Entreprises
               Géologiques et Géotechniques est une société tunisienne spécialisée
               dans les études de sol, les forages et les travaux spéciaux. Depuis
-              notre création, nous avons accompagné des centaines de projets de
+              <strong className="text-primary"> 2011</strong>, nous avons accompagné des centaines de projets de
               construction et d'infrastructure à travers le pays.
             </p>
 
@@ -155,9 +155,9 @@ export function AboutSection() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary-foreground">
-                    30+
+                    2011
                   </div>
-                  <div className="text-sm text-primary-foreground/80">Ans</div>
+                  <div className="text-sm text-primary-foreground/80">Depuis</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary-foreground">

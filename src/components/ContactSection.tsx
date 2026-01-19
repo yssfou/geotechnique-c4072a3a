@@ -1,22 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const contactInfo = [
   {
     icon: Phone,
     label: "Téléphone",
     values: [
-      { text: "+216 97 446 899", href: "tel:+21697446899", subLabel: "Mobile" },
-      { text: "+216 71 762 924", href: "tel:+21671762924", subLabel: "Tel/Fax" },
+      { text: "+216 97 446 899", subLabel: "Mobile" },
+      { text: "+216 71 762 924", subLabel: "Tel/Fax" },
     ],
   },
   {
     icon: Mail,
     label: "Email",
-    values: [
-      { text: "egg.brahim@gmail.com", href: "mailto:egg.brahim@gmail.com" },
-    ],
+    values: [{ text: "egg.brahim@gmail.com" }],
   },
   {
     icon: MapPin,
@@ -25,7 +23,6 @@ const contactInfo = [
       {
         text: "Local 1, Impasse Amine Rayhani",
         subText: "Cité La Gazelle, Ariana 2083, Tunisie",
-        href: "https://maps.google.com/?q=La+Gazelle+Ariana+Tunisia",
       },
     ],
   },
@@ -59,7 +56,7 @@ export function ContactSection() {
         </motion.div>
 
         {/* Contact Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {contactInfo.map((contact, index) => (
             <motion.div
               key={contact.label}
@@ -67,8 +64,8 @@ export function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="group p-8 rounded-2xl bg-card border border-border/30 shadow-card transition-all duration-300 hover:border-primary/30 hover:shadow-glow"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group p-8 rounded-2xl bg-card border border-border/30 shadow-card transition-all duration-300 hover:border-primary/30 hover:shadow-glow cursor-default"
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
@@ -76,28 +73,21 @@ export function ContactSection() {
               </div>
 
               {/* Label */}
-              <h3 className="text-lg font-semibold text-foreground mb-4">
+              <h3 className="text-lg font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
                 {contact.label}
               </h3>
 
               {/* Values */}
               <div className="space-y-3">
                 {contact.values.map((value, vIndex) => (
-                  <motion.a
-                    key={vIndex}
-                    href={value.href}
-                    target={value.href?.startsWith("http") ? "_blank" : undefined}
-                    rel={value.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                    whileHover={{ x: 5 }}
-                    className="flex items-start gap-2 group/link"
-                  >
+                  <div key={vIndex} className="flex items-start gap-2">
                     <div className="flex-1">
                       {value.subLabel && (
                         <span className="text-xs text-muted-foreground block mb-1">
                           {value.subLabel}
                         </span>
                       )}
-                      <span className="text-muted-foreground group-hover/link:text-primary transition-colors">
+                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">
                         {value.text}
                       </span>
                       {value.subText && (
@@ -106,13 +96,35 @@ export function ContactSection() {
                         </span>
                       )}
                     </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover/link:opacity-100 group-hover/link:text-primary transition-all -translate-x-2 group-hover/link:translate-x-0" />
-                  </motion.a>
+                  </div>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Google Maps Embed */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-5xl mx-auto mb-16"
+        >
+          <div className="rounded-2xl overflow-hidden border border-border/30 shadow-card">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.123456789!2d10.178!3d36.865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd35a3b3b3b3b3%3A0x1234567890abcdef!2sCit%C3%A9%20La%20Gazelle%2C%20Ariana%2C%20Tunisia!5e0!3m2!1sen!2stn!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="EGG Location - Cité La Gazelle, Ariana"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        </motion.div>
 
         {/* CTA Banner */}
         <motion.div
@@ -120,7 +132,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <div className="p-8 md:p-12 rounded-3xl bg-terracotta-gradient relative overflow-hidden">
             {/* Background Pattern */}
