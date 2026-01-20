@@ -128,6 +128,13 @@ export function Footer() {
             La Gazelle, Ariana, Tunisie
           </p>
         </motion.div>
+        
+        {/* Creator Credit */}
+        <div className="mt-4 text-right">
+          <p className="text-xs text-muted-foreground/60">
+            Created by Ourabi Youssef
+          </p>
+        </div>
       </div>
     </footer>
   );
