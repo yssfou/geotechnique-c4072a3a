@@ -21,13 +21,6 @@ const services: Service[] = [
       "Études de sol approfondies pour vos projets de construction. Analyses précises et rapports détaillés.",
   },
   {
-    image: serviceForages,
-    category: "Hydraulique",
-    title: "Forages d'Eau",
-    description:
-      "Réalisation de forages pour l'approvisionnement en eau. Solutions durables et économiques.",
-  },
-  {
     image: serviceEnvironment,
     category: "Environnement",
     title: "Études Environnementales",
