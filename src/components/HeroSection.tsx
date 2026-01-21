@@ -117,7 +117,7 @@ export function HeroSection() {
             value: "15+",
             label: "Années d'Expérience"
           }, {
-            value: "150+",
+            value: "700+",
             label: "Projets Réalisés"
           }, {
             value: "100%",
