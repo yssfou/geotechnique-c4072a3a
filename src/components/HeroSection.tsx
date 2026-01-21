@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-drilling.jpg";
+import heroImage from "@/assets/drilling-hero.png";
 export function HeroSection() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);

@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import serviceGeotechnique from "@/assets/service-geotechnique.jpg";
-import serviceForages from "@/assets/service-forages.jpg";
-import serviceEnvironment from "@/assets/service-environment.jpg";
-import serviceTravaux from "@/assets/service-travaux.jpg";
+import serviceGeotechnique from "@/assets/service-1.png";
+import serviceEnvironment from "@/assets/service-2.png";
+import serviceTravaux from "@/assets/service-3.png";
 
 interface Service {
   image: string;
