@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/drilling-hero.png";
+import { HeroGallery } from "./HeroGallery";
+
 export function HeroSection() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -139,6 +141,16 @@ export function HeroSection() {
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </motion.div>)}
+          </motion.div>
+
+          {/* Gallery Slideshow */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="mt-16"
+          >
+            <HeroGallery />
           </motion.div>
         </div>
       </div>
