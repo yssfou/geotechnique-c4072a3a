@@ -113,7 +113,7 @@ export function ContactSection() {
         >
           <div className="rounded-2xl overflow-hidden border border-border/30 shadow-card">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.123456789!2d10.178!3d36.865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd35a3b3b3b3b3%3A0x1234567890abcdef!2sCit%C3%A9%20La%20Gazelle%2C%20Ariana%2C%20Tunisia!5e0!3m2!1sen!2stn!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.5!2d10.1627!3d36.8619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd357a1d9a9a9b%3A0x1234567890abcdef!2sEGG%20-%20Entreprises%20G%C3%A9ologiques%20et%20G%C3%A9otechniques!5e0!3m2!1sfr!2stn!4v1700000000000"
               width="100%"
               height="400"
               style={{ border: 0 }}

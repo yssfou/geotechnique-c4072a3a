@@ -4,6 +4,10 @@ import client1 from "@/assets/clients/client-1.webp";
 import steg from "@/assets/clients/steg.png";
 import client4 from "@/assets/clients/client-4.gif";
 import scet from "@/assets/clients/scet.svg";
+import gallery1 from "@/assets/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/gallery/gallery-2.jpg";
+import gallery3 from "@/assets/gallery/gallery-3.jpg";
+import gallery4 from "@/assets/gallery/gallery-4.jpg";
 
 const clients = [
   { name: "Client 1", logo: client1 },
@@ -11,6 +15,8 @@ const clients = [
   { name: "Client 4", logo: client4 },
   { name: "SCET", logo: scet },
 ];
+
+const galleryImages = [gallery1, gallery2, gallery3, gallery4];
 
 // Duplicate for seamless infinite scroll
 const duplicatedClients = [...clients, ...clients, ...clients];
@@ -42,7 +48,7 @@ export const ClientsSection = () => {
         </motion.div>
 
         {/* Logo Slideshow */}
-        <div className="relative">
+        <div className="relative mb-12">
           {/* Gradient overlays for seamless effect */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
@@ -70,6 +76,65 @@ export const ClientsSection = () => {
                     src={client.logo}
                     alt={client.name}
                     className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Project Gallery Slideshow */}
+        <div className="mt-8">
+          {/* First row - scrolls left */}
+          <div className="mb-4 overflow-hidden">
+            <motion.div
+              className="flex gap-4"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                x: {
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...galleryImages, ...galleryImages].map((img, index) => (
+                <div
+                  key={`row1-${index}`}
+                  className="flex-shrink-0 w-64 h-40 md:w-80 md:h-48 rounded-xl overflow-hidden border border-border/30"
+                >
+                  <img
+                    src={img}
+                    alt={`Project ${(index % galleryImages.length) + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Second row - scrolls right (opposite direction) */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-4"
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{
+                x: {
+                  duration: 25,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...galleryImages].reverse().concat([...galleryImages].reverse()).map((img, index) => (
+                <div
+                  key={`row2-${index}`}
+                  className="flex-shrink-0 w-64 h-40 md:w-80 md:h-48 rounded-xl overflow-hidden border border-border/30"
+                >
+                  <img
+                    src={img}
+                    alt={`Project ${(index % galleryImages.length) + 1}`}
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
