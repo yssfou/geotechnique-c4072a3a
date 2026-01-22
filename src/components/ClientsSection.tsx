@@ -78,7 +78,7 @@ export const ClientsSection = () => {
             }
           }}>
               {duplicatedClients.map((client, index) => <div key={`${client.name}-${index}`} className="flex-shrink-0 flex items-center justify-center h-24 w-48 bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors duration-300">
-                  <img src={client.logo} alt={client.name} className="max-h-16 max-w-full object-contain filter brightness-0 invert transition-opacity duration-300 opacity-100" />
+                  <img src={client.logo} alt={client.name} className="max-h-16 max-w-full filter brightness-0 invert transition-opacity duration-300 opacity-100 object-fill" />
                 </div>)}
             </motion.div>
           </div>
