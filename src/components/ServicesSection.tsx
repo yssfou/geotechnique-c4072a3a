@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import serviceGeotechnique from "@/assets/service-1.png";
 import serviceEnvironment from "@/assets/service-2.png";
 import serviceTravaux from "@/assets/service-3.png";
+import project1 from "@/assets/projects/project-1.jpg";
+import project2 from "@/assets/projects/project-2.jpg";
+import project3 from "@/assets/projects/project-3.jpg";
+import project4 from "@/assets/projects/project-4.jpg";
+import project5 from "@/assets/projects/project-5.jpg";
+
+const projectImages = [project1, project2, project3, project4, project5];
 
 interface Service {
   image: string;
@@ -107,38 +114,40 @@ export function ServicesSection() {
         </div>
       </div>
 
-      {/* Infinite Scroll Carousel */}
+      {/* Project Images Slideshow - Left to Right */}
       <div className="relative mt-20 overflow-hidden">
         {/* Gradient Overlays */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
 
-        {/* Scrolling Container */}
-        <div className="flex animate-scroll-left">
-          {[...services, ...services, ...services, ...services].map((service, index) => (
-            <motion.div
-              key={`scroll-${index}`}
-              whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 w-80 mx-4 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30 cursor-pointer group"
+        {/* Scrolling Container - Left to Right */}
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 25,
+              ease: "linear",
+            },
+          }}
+        >
+          {[...projectImages, ...projectImages].map((image, index) => (
+            <div
+              key={`project-${index}`}
+              className="flex-shrink-0 w-80 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30"
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src={image}
+                  alt={`Projet ${(index % projectImages.length) + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <div className="p-4">
-                <span className="text-xs text-primary font-medium">
-                  {service.category}
-                </span>
-                <h4 className="text-lg font-semibold text-foreground mt-1">
-                  {service.title}
-                </h4>
-              </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
