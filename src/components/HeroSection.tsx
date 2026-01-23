@@ -90,7 +90,7 @@ export function HeroSection({
   disclaimer = "Experts en Géotechnique depuis 2011",
   socialProof = {
     avatars: [project1, project2, project3],
-    text: "700+ projets réalisés avec succès"
+    text: "1000+ projets réalisés avec succès"
   },
   programs = [{
     image: project1,
@@ -98,8 +98,8 @@ export function HeroSection({
     title: "Sondages & Essais"
   }, {
     image: project2,
-    category: "Forages",
-    title: "Forages d'Eau"
+    category: "Environnement",
+    title: "Études Environnementales"
   }, {
     image: project3,
     category: "Environnement",
