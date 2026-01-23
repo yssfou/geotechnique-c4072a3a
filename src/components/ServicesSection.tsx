@@ -114,7 +114,7 @@ export function ServicesSection() {
         </div>
       </div>
 
-      {/* Project Images Slideshow - Left to Right */}
+      {/* First Project Images Slideshow - Left to Right */}
       <div className="relative mt-20 overflow-hidden">
         {/* Gradient Overlays */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
@@ -135,8 +135,44 @@ export function ServicesSection() {
         >
           {[...projectImages, ...projectImages].map((image, index) => (
             <div
-              key={`project-${index}`}
+              key={`project-row1-${index}`}
               className="flex-shrink-0 w-80 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={image}
+                  alt={`Projet ${(index % projectImages.length) + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Second Project Images Slideshow - Left to Right (slower) */}
+      <div className="relative mt-6 overflow-hidden">
+        {/* Gradient Overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+
+        {/* Scrolling Container - Left to Right (offset start) */}
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 30,
+              ease: "linear",
+            },
+          }}
+        >
+          {[...projectImages.slice().reverse(), ...projectImages.slice().reverse()].map((image, index) => (
+            <div
+              key={`project-row2-${index}`}
+              className="flex-shrink-0 w-72 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30"
             >
               <div className="aspect-video overflow-hidden">
                 <img
