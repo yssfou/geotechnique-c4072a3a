@@ -207,24 +207,7 @@ export function HeroSection({
             </motion.p>}
 
           {/* Social Proof */}
-          {socialProof && <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.7,
-        delay: 0.6
-      }} className="flex items-center gap-4">
-              <div className="flex -space-x-3">
-                {socialProof.avatars.map((avatar, index) => <img key={index} src={avatar} alt={`Project ${index + 1}`} className="w-10 h-10 rounded-full border-2 border-background object-cover" />)}
-              </div>
-
-              <span className="text-sm text-muted-foreground">
-                {socialProof.text}
-              </span>
-            </motion.div>}
+          {socialProof}
         </div>}
 
       {/* Program Cards Carousel */}
