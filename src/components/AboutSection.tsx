@@ -151,9 +151,7 @@ export function AboutSection() {
                   <div className="text-sm text-primary-foreground/80">Depuis</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary-foreground">
-                    150+
-                  </div>
+                  <div className="text-3xl font-bold text-primary-foreground">1000+</div>
                   <div className="text-sm text-primary-foreground/80">
                     Projets
                   </div>
