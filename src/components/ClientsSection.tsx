@@ -30,8 +30,6 @@ const clients = [{
   logo: habitat
 }];
 
-// Duplicate for seamless infinite scroll
-const duplicatedClients = [...clients, ...clients, ...clients];
 export const ClientsSection = () => {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
@@ -59,38 +57,41 @@ export const ClientsSection = () => {
           </p>
         </motion.div>
 
-        {/* Logo Slideshow */}
+        {/* Infinite Logo Carousel */}
         <div className="relative">
           {/* Gradient overlays for seamless effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           <div className="overflow-hidden py-8">
-            <motion.div
-              className="flex items-center gap-12"
-              animate={{ x: ["0%", "-33.33%"] }}
-              transition={{
-                x: {
-                  duration: 25,
-                  repeat: Infinity,
-                  ease: "linear",
-                },
-              }}
-            >
-              {duplicatedClients.map((client, index) => (
-                <motion.div
-                  key={`${client.name}-${index}`}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex-shrink-0 flex items-center justify-center h-28 w-56 bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300"
+            <div className="flex animate-scroll-left">
+              {/* First set of logos */}
+              {clients.map((client, index) => (
+                <div
+                  key={`first-${client.name}-${index}`}
+                  className="flex-shrink-0 mx-6 flex items-center justify-center h-24 w-48 bg-card/80 backdrop-blur-sm rounded-xl p-4 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
                 >
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-20 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+              {/* Duplicate set for seamless loop */}
+              {clients.map((client, index) => (
+                <div
+                  key={`second-${client.name}-${index}`}
+                  className="flex-shrink-0 mx-6 flex items-center justify-center h-24 w-48 bg-card/80 backdrop-blur-sm rounded-xl p-4 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

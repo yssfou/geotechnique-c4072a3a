@@ -161,7 +161,11 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 25s linear infinite;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
   }
 
   /* Fade in up animation */
