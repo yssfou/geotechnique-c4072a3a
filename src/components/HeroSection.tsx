@@ -1,54 +1,194 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import heroImage from "@/assets/drilling-hero.png";
+import project1 from "@/assets/projects/project-1.jpg";
+import project2 from "@/assets/projects/project-2.jpg";
+import project3 from "@/assets/projects/project-3.jpg";
+import project4 from "@/assets/projects/project-4.jpg";
+import project5 from "@/assets/projects/project-5.jpg";
 
-export function HeroSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+interface NavigationItem {
+  label: string;
+  hasDropdown?: boolean;
+  onClick?: () => void;
+}
+
+interface ProgramCard {
+  image: string;
+  category: string;
+  title: string;
+  onClick?: () => void;
+}
+
+interface HeroSectionProps {
+  logo?: string;
+  navigation?: NavigationItem[];
+  ctaButton?: {
+    label: string;
+    onClick: () => void;
   };
-  return <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  title?: string;
+  subtitle?: string;
+  primaryAction?: {
+    label: string;
+    onClick: () => void;
+  };
+  secondaryAction?: {
+    label: string;
+    onClick: () => void;
+  };
+  disclaimer?: string;
+  socialProof?: {
+    avatars: string[];
+    text: string;
+  };
+  programs?: ProgramCard[];
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export function HeroSection({
+  logo = "EGG",
+  navigation = [
+    { label: "Accueil" },
+    { label: "Services", hasDropdown: true },
+    { label: "À Propos" },
+    { label: "Clients" },
+    { label: "Contact" },
+  ],
+  ctaButton = {
+    label: "Contactez-nous",
+    onClick: () => {
+      const element = document.querySelector("#contact");
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    },
+  },
+  title = "Entreprises Géologiques & Géotechniques",
+  subtitle = "Spécialistes en sondages géotechniques, forages d'eau, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
+  primaryAction = {
+    label: "Découvrir nos Services",
+    onClick: () => {
+      const element = document.querySelector("#services");
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    },
+  },
+  secondaryAction = {
+    label: "En savoir plus",
+    onClick: () => {
+      const element = document.querySelector("#about");
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    },
+  },
+  disclaimer = "Experts en Géotechnique depuis 2011",
+  socialProof = {
+    avatars: [project1, project2, project3],
+    text: "700+ projets réalisés avec succès",
+  },
+  programs = [
+    { image: project1, category: "Géotechnique", title: "Sondages & Essais" },
+    { image: project2, category: "Forages", title: "Forages d'Eau" },
+    { image: project3, category: "Environnement", title: "Études Environnementales" },
+    { image: project4, category: "Travaux", title: "Travaux Spéciaux" },
+    { image: project5, category: "Expertise", title: "Conseil Technique" },
+  ],
+  className,
+  children,
+}: HeroSectionProps) {
+  return (
+    <section
+      id="accueil"
+      className={cn(
+        "relative min-h-screen flex flex-col overflow-hidden",
+        className
+      )}
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Geotechnical drilling site" className="w-full h-full object-cover" />
+        <img
+          src={heroImage}
+          alt="Geotechnical drilling site"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-hero-gradient opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="inline-flex items-center gap-2 bg-secondary/60 backdrop-blur-sm border border-border/50 rounded-full px-4 py-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Experts en Géotechnique depuis 2011 
-            </span>
-          </motion.div>
+      {/* Header */}
+      <header className="relative z-20 flex items-center justify-between px-6 py-4 md:px-12 lg:px-20">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-2"
+        >
+          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+            <span className="text-primary-foreground font-bold text-lg">E</span>
+          </div>
+          <span className="text-xl font-bold text-foreground">{logo}</span>
+        </motion.div>
 
+        {/* Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navigation.map((item, index) => (
+            <motion.button
+              key={index}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              onClick={item.onClick}
+              className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+            >
+              {item.label}
+              {item.hasDropdown && (
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              )}
+            </motion.button>
+          ))}
+        </nav>
+
+        {/* CTA Button */}
+        {ctaButton && (
+          <motion.button
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={ctaButton.onClick}
+            className="hidden md:flex bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-glow transition-all"
+          >
+            {ctaButton.label}
+          </motion.button>
+        )}
+      </header>
+
+      {/* Main Content */}
+      {children ? (
+        <div className="relative z-10 flex-1 flex items-center justify-center px-6">
+          {children}
+        </div>
+      ) : (
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center max-w-4xl mx-auto">
           {/* Title */}
-          <motion.h1 initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.7,
-          delay: 0.1
-        }} className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+          >
             <span className="text-foreground">Entreprises</span>
             <br />
             <span className="text-gradient">Géologiques &</span>
@@ -57,109 +197,151 @@ export function HeroSection() {
           </motion.h1>
 
           {/* Subtitle */}
-          <motion.p initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.7,
-          delay: 0.2
-        }} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Spécialistes en sondages géotechniques, forages d'eau, études
-            environnementales et travaux spéciaux. Votre partenaire de confiance
-            en Tunisie.
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8"
+          >
+            {subtitle}
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.7,
-          delay: 0.3
-        }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.button onClick={() => scrollToSection("#services")} whileHover={{
-            scale: 1.05
-          }} whileTap={{
-            scale: 0.95
-          }} className="group flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-glow">
-              Découvrir nos Services
-              <motion.svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </motion.svg>
-            </motion.button>
+          {/* Action Buttons */}
+          {(primaryAction || secondaryAction) && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="flex flex-col sm:flex-row items-center gap-4 mb-8"
+            >
+              {primaryAction && (
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={primaryAction.onClick}
+                  className="group flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-glow"
+                >
+                  {primaryAction.label}
+                  <motion.svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="group-hover:translate-x-1 transition-transform"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </motion.svg>
+                </motion.button>
+              )}
 
-            <motion.button onClick={() => scrollToSection("#contact")} whileHover={{
-            scale: 1.05
-          }} whileTap={{
-            scale: 0.95
-          }} className="flex items-center gap-2 border border-border/50 bg-secondary/30 backdrop-blur-sm text-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-secondary/50">
-              Contactez-nous
-            </motion.button>
-          </motion.div>
+              {secondaryAction && (
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={secondaryAction.onClick}
+                  className="flex items-center gap-2 border border-border/50 bg-secondary/30 backdrop-blur-sm text-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-secondary/50"
+                >
+                  {secondaryAction.label}
+                </motion.button>
+              )}
+            </motion.div>
+          )}
 
-          {/* Stats */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 40
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.5
-        }} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[{
-            value: "15+",
-            label: "Années d'Expérience"
-          }, {
-            value: "700+",
-            label: "Projets Réalisés"
-          }, {
-            value: "100%",
-            label: "Clients Satisfaits"
-          }, {
-            value: "24/7",
-            label: "Support Disponible"
-          }].map((stat, index) => <motion.div key={stat.label} initial={{
-            opacity: 0,
-            scale: 0.8
-          }} animate={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            delay: 0.6 + index * 0.1
-          }} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  {stat.value}
+          {/* Disclaimer */}
+          {disclaimer && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="text-sm text-muted-foreground mb-6"
+            >
+              {disclaimer}
+            </motion.p>
+          )}
+
+          {/* Social Proof */}
+          {socialProof && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="flex items-center gap-4"
+            >
+              <div className="flex -space-x-3">
+                {socialProof.avatars.map((avatar, index) => (
+                  <img
+                    key={index}
+                    src={avatar}
+                    alt={`Project ${index + 1}`}
+                    className="w-10 h-10 rounded-full border-2 border-background object-cover"
+                  />
+                ))}
+              </div>
+
+              <span className="text-sm text-muted-foreground">
+                {socialProof.text}
+              </span>
+            </motion.div>
+          )}
+        </div>
+      )}
+
+      {/* Program Cards Carousel */}
+      {programs.length > 0 && (
+        <div className="relative z-10 w-full overflow-hidden pb-8">
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+
+          {/* Scrolling Container */}
+          <motion.div
+            className="flex gap-6 px-6"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 25,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* Duplicate programs for seamless loop */}
+            {[...programs, ...programs].map((program, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02, y: -5 }}
+                onClick={program.onClick}
+                className="relative flex-shrink-0 w-72 h-48 rounded-2xl overflow-hidden cursor-pointer group"
+              >
+                {/* Image */}
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                {/* Text Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <span className="text-xs font-medium text-primary uppercase tracking-wider">
+                    {program.category}
+                  </span>
+                  <h3 className="text-lg font-semibold text-white mt-1">
+                    {program.title}
+                  </h3>
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>)}
+              </motion.div>
+            ))}
           </motion.div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      delay: 1
-    }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <motion.div animate={{
-        y: [0, 10, 0]
-      }} transition={{
-        duration: 1.5,
-        repeat: Infinity
-      }} className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex items-start justify-center p-2">
-          <motion.div className="w-1.5 h-1.5 bg-primary rounded-full" />
-        </motion.div>
-      </motion.div>
-    </section>;
+      )}
+    </section>
+  );
 }
