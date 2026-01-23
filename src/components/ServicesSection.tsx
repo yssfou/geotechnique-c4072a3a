@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import serviceGeotechnique from "@/assets/service-1.png";
 import serviceEnvironment from "@/assets/service-2.png";
 import serviceTravaux from "@/assets/service-3.png";
-import project1 from "@/assets/projects/project-1.jpg";
-import project2 from "@/assets/projects/project-2.jpg";
-import project3 from "@/assets/projects/project-3.jpg";
-import project4 from "@/assets/projects/project-4.jpg";
-import project5 from "@/assets/projects/project-5.jpg";
+import slideshow1 from "@/assets/projects/slideshow-1.jpg";
+import slideshow2 from "@/assets/projects/slideshow-2.jpg";
+import slideshow3 from "@/assets/projects/slideshow-3.jpg";
+import slideshow4 from "@/assets/projects/slideshow-4.jpg";
+import slideshow5 from "@/assets/projects/slideshow-5.jpg";
+import slideshow6 from "@/assets/projects/slideshow-6.jpg";
 
-const projectImages = [project1, project2, project3, project4, project5];
+const projectImages = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5, slideshow6];
 
 interface Service {
   image: string;
