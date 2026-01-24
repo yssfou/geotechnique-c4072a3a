@@ -113,7 +113,7 @@ export function ContactSection() {
         >
           <div className="rounded-2xl overflow-hidden border border-border/30 shadow-card">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.5!2d10.1627!3d36.8619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd357a1d9a9a9b%3A0x1234567890abcdef!2sEGG%20-%20Entreprises%20G%C3%A9ologiques%20et%20G%C3%A9otechniques!5e0!3m2!1sfr!2stn!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d909!2d10.16759!3d36.8927992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cd34810a7915%3A0x3a3d847689aa15b6!2sentreprise%20g%C3%A9ologique%20et%20g%C3%A9otechnique!5e0!3m2!1sfr!2stn!4v1700000000000"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -165,7 +165,9 @@ export function ContactSection() {
                   Appelez-nous
                 </motion.a>
                 <motion.a
-                  href="mailto:egg.brahim@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=egg.brahim@gmail.com&su=Demande%20de%20renseignements%20-%20EGG"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-primary-foreground/10"
