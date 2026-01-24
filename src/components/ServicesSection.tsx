@@ -115,35 +115,17 @@ export function ServicesSection() {
         <div className="overflow-hidden py-4">
           <div className="flex animate-scroll-left gap-6">
             {/* First set */}
-            {projectImages.map((image, index) => (
-              <div 
-                key={`project-${index}`} 
-                className="flex-shrink-0 w-72 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
+            {projectImages.map((image, index) => <div key={`project-${index}`} className="flex-shrink-0 w-72 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 group">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={image} 
-                    alt={`Projet ${index + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
+                  <img src={image} alt={`Projet ${index + 1}`} className="w-full h-full transition-transform duration-500 group-hover:scale-110 object-fill" />
                 </div>
-              </div>
-            ))}
+              </div>)}
             {/* Duplicate for seamless loop */}
-            {projectImages.map((image, index) => (
-              <div 
-                key={`project-dup-${index}`} 
-                className="flex-shrink-0 w-72 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
+            {projectImages.map((image, index) => <div key={`project-dup-${index}`} className="flex-shrink-0 w-72 rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 group">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={image} 
-                    alt={`Projet ${index + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
+                  <img src={image} alt={`Projet ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
