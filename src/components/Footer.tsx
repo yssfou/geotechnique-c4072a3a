@@ -37,13 +37,15 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="mailto:egg.brahim@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=egg.brahim@gmail.com&su=Demande%20de%20renseignements%20-%20EGG"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors group"
               >
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://www.google.com/maps/place/entreprise+g%C3%A9ologique+et+g%C3%A9otechnique/@36.8927992,10.16759,17z"
+                href="https://www.google.com/maps/place/entreprise+g%C3%A9ologique+et+g%C3%A9otechnique/@36.8927992,10.16759,909m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12e2cd34810a7915:0x3a3d847689aa15b6!8m2!3d36.8927992!4d10.16759!16s%2Fg%2F11t85hw6l7?entry=ttu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors group"
