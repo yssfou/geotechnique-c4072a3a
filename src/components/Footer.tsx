@@ -43,7 +43,7 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://maps.google.com/?q=La+Gazelle+Ariana+Tunisia"
+                href="https://www.google.com/maps/place/entreprise+g%C3%A9ologique+et+g%C3%A9otechnique/@36.8927992,10.16759,17z"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors group"
@@ -95,7 +95,6 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 "Sondages Géotechniques",
-                "Forages d'Eau",
                 "Études Environnementales",
                 "Travaux Spéciaux",
               ].map((service) => (
