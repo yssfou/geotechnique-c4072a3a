@@ -1,16 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <footer className="bg-card border-t border-border/30">
@@ -23,7 +17,9 @@ export function Footer() {
             viewport={{ once: true }}
             className="md:col-span-2"
           >
-            <h3 className="text-3xl font-bold text-gradient mb-4">EGG</h3>
+            <Link to="/">
+              <h3 className="text-3xl font-bold text-gradient mb-4">EGG</h3>
+            </Link>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
               Entreprises Géologiques et Géotechniques - Votre partenaire de
               confiance pour tous vos projets de sondages, forages et études
@@ -67,18 +63,20 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Accueil", href: "#accueil" },
-                { label: "Services", href: "#services" },
-                { label: "À Propos", href: "#apropos" },
-                { label: "Contact", href: "#contact" },
+                { label: "Accueil", href: "/" },
+                { label: "Domaines", href: "/domaines" },
+                { label: "Services", href: "/services" },
+                { label: "Moyens", href: "/moyens" },
+                { label: "Références", href: "/references" },
+                { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,12 +99,12 @@ export function Footer() {
                 "Travaux Spéciaux",
               ].map((service) => (
                 <li key={service}>
-                  <button
-                    onClick={() => scrollToSection("#services")}
+                  <Link
+                    to="/services"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {service}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
