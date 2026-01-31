@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link, useLocation } from "react-router-dom";
+
 interface NavigationItem {
   label: string;
   href: string;
+  isRoute?: boolean;
 }
-const navigationItems: NavigationItem[] = [{
-  label: "Accueil",
-  href: "#accueil"
-}, {
-  label: "Services",
-  href: "#services"
-}, {
-  label: "À Propos",
-  href: "#apropos"
-}, {
-  label: "Contact",
-  href: "#contact"
-}];
+
+const navigationItems: NavigationItem[] = [
+  { label: "Accueil", href: "/", isRoute: true },
+  { label: "Domaines", href: "/domaines", isRoute: true },
+  { label: "Services", href: "/services", isRoute: true },
+  { label: "Moyens", href: "/moyens", isRoute: true },
+  { label: "Références", href: "/references", isRoute: true },
+  { label: "Contact", href: "/contact", isRoute: true },
+];
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -29,15 +31,14 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return location.pathname === "/";
     }
-    setIsMobileMenuOpen(false);
+    return location.pathname.startsWith(href);
   };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -53,41 +54,55 @@ export function Navigation() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-primary cursor-pointer"
-            onClick={() => scrollToSection("#accueil")}
-          >
-            EGG
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-2xl font-bold text-primary cursor-pointer"
+            >
+              EGG
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navigationItems.map((item) => (
-              <button
+              <Link
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                to={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors relative py-2",
+                  isActive(item.href)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
               >
                 {item.label}
-              </button>
+                {isActive(item.href) && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </Link>
             ))}
           </nav>
 
           {/* CTA Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => scrollToSection("#contact")}
-            className="hidden md:block bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:shadow-glow transition-all"
-          >
-            Contactez-nous
-          </motion.button>
+          <Link to="/contact" className="hidden lg:block">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:shadow-glow transition-all"
+            >
+              Contactez-nous
+            </motion.button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -101,24 +116,43 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
+            className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border"
           >
-            <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
-              {navigationItems.map((item) => (
-                <button
+            <nav className="container mx-auto px-6 py-4 flex flex-col gap-2">
+              {navigationItems.map((item, index) => (
+                <motion.div
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
                 >
-                  {item.label}
-                </button>
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      "block text-sm font-medium transition-colors py-3 px-4 rounded-lg",
+                      isActive(item.href)
+                        ? "bg-primary/10 text-primary"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
-              <button
-                onClick={() => scrollToSection("#contact")}
-                className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-medium mt-2"
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navigationItems.length * 0.05 }}
               >
-                Contactez-nous
-              </button>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-medium mt-4 text-center"
+                >
+                  Contactez-nous
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}
