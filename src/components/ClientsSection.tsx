@@ -7,28 +7,26 @@ import scet from "@/assets/clients/scet.svg";
 import avicenne from "@/assets/clients/avicenne.jpg";
 import client5 from "@/assets/clients/client-5.png";
 import habitat from "@/assets/clients/habitat.png";
-const clients = [{
-  name: "Client 1",
-  logo: client1
-}, {
-  name: "STEG",
-  logo: steg
-}, {
-  name: "Client 4",
-  logo: client4
-}, {
-  name: "SCET",
-  logo: scet
-}, {
-  name: "Avicenne",
-  logo: avicenne
-}, {
-  name: "Client 5",
-  logo: client5
-}, {
-  name: "Habitat",
-  logo: habitat
-}];
+import acte from "@/assets/clients/acte.png";
+import ministereAgriculture from "@/assets/clients/ministere-agriculture.png";
+import econet from "@/assets/clients/econet.png";
+import ministereFinances from "@/assets/clients/ministere-finances.png";
+import hiwar from "@/assets/clients/hiwar.png";
+
+const clients = [
+  { name: "Client 1", logo: client1 },
+  { name: "STEG", logo: steg },
+  { name: "Client 4", logo: client4 },
+  { name: "SCET", logo: scet },
+  { name: "Avicenne", logo: avicenne },
+  { name: "Client 5", logo: client5 },
+  { name: "Habitat", logo: habitat },
+  { name: "ACTE", logo: acte },
+  { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
+  { name: "Econet", logo: econet },
+  { name: "Ministère des Finances", logo: ministereFinances },
+  { name: "Hiwar", logo: hiwar },
+];
 
 export const ClientsSection = () => {
   return (
@@ -50,7 +48,7 @@ export const ClientsSection = () => {
             Partenaires de confiance
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Nos <span className="text-gradient">Clients</span>
+            Ils Nous Font <span className="text-gradient">Confiance</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Nous sommes fiers de collaborer avec des entreprises et institutions de premier plan
@@ -74,7 +72,7 @@ export const ClientsSection = () => {
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="max-h-16 max-w-full object-contain transition-all duration-300"
                   />
                 </div>
               ))}
@@ -87,7 +85,7 @@ export const ClientsSection = () => {
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="max-h-16 max-w-full object-contain transition-all duration-300"
                   />
                 </div>
               ))}
