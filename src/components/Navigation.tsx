@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavigationItem {
   label: string;
@@ -88,16 +89,19 @@ export function Navigation() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <Link to="/contact" className="hidden lg:block">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:shadow-glow transition-all"
-            >
-              Contactez-nous
-            </motion.button>
-          </Link>
+          {/* CTA + Theme Toggle */}
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:shadow-glow transition-all"
+              >
+                Contactez-nous
+              </motion.button>
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
