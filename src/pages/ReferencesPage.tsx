@@ -42,7 +42,7 @@ const caseStudies = [
     image: slideshow1,
     title: "Complexe Résidentiel - Les Jardins de Carthage",
     category: "Géotechnique",
-    location: "Tunis",
+    location: "Touzeur",
     year: "2024",
     description: "Étude géotechnique complète pour un ensemble résidentiel de 150 logements. Sondages carottés, essais pressiométriques et recommandations de fondations superficielles.",
   },
