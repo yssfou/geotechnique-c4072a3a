@@ -60,7 +60,7 @@ const caseStudies = [
     category: "Travaux Spéciaux",
     location: "Sousse",
     year: "2023",
-    description: "Fondations profondes par micropieux pour un centre commercial de 25 000 m². Suivi géotechnique et contrôle qualité.",
+    description: "Rénovation de la grande Mosquée du Kairouan ( Mosquée okba Ibn Nafaa)",
   },
   {
     image: slideshow4,
