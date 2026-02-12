@@ -52,7 +52,7 @@ const caseStudies = [
     category: "Environnement",
     location: "Tataouine",
     year: "2024",
-    description: "Étude d'impact environnemental et reconnaissance géotechnique pour l'implantation d'une centrale photovoltaïque de 50 MW.",
+    description: "Rénovation de la grande Mosquée du Kairouan ( Mosquée okba Ibn Nafaa)",
   },
   {
     image: slideshow3,
