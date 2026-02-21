@@ -56,7 +56,7 @@ const caseStudies = [
   },
   {
     image: slideshow3,
-    title: "Centre Commercial - Mall of Sousse",
+    title: "Mosquée Okba Ibn Nafaa",
     category: "Travaux Spéciaux",
     location: "Sousse",
     year: "2023",
