@@ -58,7 +58,7 @@ const caseStudies = [
     image: slideshow3,
     title: "Mosquée Okba Ibn Nafaa",
     category: "Travaux Spéciaux",
-    location: "Sousse",
+    location: "Kairouan",
     year: "2023",
     description: "GVt Kairouan. Mosquée Okba Ibn Nafaa",
   },
