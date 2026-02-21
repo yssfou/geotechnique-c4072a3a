@@ -60,7 +60,7 @@ const caseStudies = [
     category: "Travaux Spéciaux",
     location: "Sousse",
     year: "2023",
-    description: "Rénovation de la grande Mosquée du Kairouan ( Mosquée okba Ibn Nafaa)",
+    description: "GVt Kairouan. Mosquée Okba Ibn Nafaa",
   },
   {
     image: slideshow4,
