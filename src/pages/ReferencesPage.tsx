@@ -52,7 +52,7 @@ const caseStudies = [
     category: "Environnement",
     location: "Bizerte",
     year: "2024",
-    description: "Rénovation de la grande Mosquée du Kairouan ( Mosquée okba Ibn Nafaa)",
+    description: "SRBG pont de Bizerte",
   },
   {
     image: slideshow3,
