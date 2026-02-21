@@ -64,7 +64,7 @@ const caseStudies = [
   },
   {
     image: slideshow4,
-    title: "Usine Agroalimentaire - Zone Industrielle",
+    title: "Campagne géotechnique Gvt - Touzeur",
     category: "Géotechnique",
     location: "Sfax",
     year: "2023",
