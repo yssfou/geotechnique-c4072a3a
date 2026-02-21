@@ -48,7 +48,7 @@ const caseStudies = [
   },
   {
     image: slideshow2,
-    title: "Centrale Solaire - Tataouine",
+    title: "SRBG - Pont de Bizerte",
     category: "Environnement",
     location: "Tataouine",
     year: "2024",
