@@ -66,7 +66,7 @@ const caseStudies = [
     image: slideshow4,
     title: "Campagne géotechnique Gvt - Touzeur",
     category: "Géotechnique",
-    location: "Sfax",
+    location: "Tozeur",
     year: "2023",
     description: "Étude de sol et dimensionnement des fondations pour une unité de transformation agroalimentaire avec zones de stockage.",
   },
