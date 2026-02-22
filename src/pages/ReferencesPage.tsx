@@ -84,7 +84,7 @@ const caseStudies = [
     category: "Géotechnique",
     location: "Bizerte",
     year: "2024",
-    description: "Étude géotechnique et hydrogéologique pour un complexe hôtelier 5 étoiles en bord de mer. Analyse des risques littoraux.",
+    description: "Sondage à la tarière tariere",
   },
 ];
 
