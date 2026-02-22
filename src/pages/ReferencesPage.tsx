@@ -74,7 +74,7 @@ const caseStudies = [
     image: slideshow5,
     title: "Geotechnique-Lac0",
     category: "Infrastructure",
-    location: "Bizerte",
+    location: "Lac0",
     year: "2023",
     description: "Reconnaissance géotechnique pour 12 km de tracé routier. Sondages, essais de laboratoire et étude de stabilité des talus.",
   },
