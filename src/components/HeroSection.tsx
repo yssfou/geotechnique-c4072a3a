@@ -68,7 +68,7 @@ export function HeroSection({
     }
   },
   title = "Entreprises Géologiques & Géotechniques",
-  subtitle = "Spécialistes en sondages géotechniques, forages d'eau, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
+  subtitle = "Spécialistes en sondages géotechniques, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
   primaryAction = {
     label: "Découvrir nos Services",
     onClick: () => {
