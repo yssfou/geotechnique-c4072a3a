@@ -82,7 +82,7 @@ const caseStudies = [
     image: slideshow6,
     title: "ONAS-Bizerte",
     category: "Géotechnique",
-    location: "Hammamet",
+    location: "Bizerte",
     year: "2024",
     description: "Étude géotechnique et hydrogéologique pour un complexe hôtelier 5 étoiles en bord de mer. Analyse des risques littoraux.",
   },
