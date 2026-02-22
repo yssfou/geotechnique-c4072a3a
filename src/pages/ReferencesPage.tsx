@@ -80,7 +80,7 @@ const caseStudies = [
   },
   {
     image: slideshow6,
-    title: "Hôtel Resort - Zone Touristique",
+    title: "ONAS-Bizerte",
     category: "Géotechnique",
     location: "Hammamet",
     year: "2024",
