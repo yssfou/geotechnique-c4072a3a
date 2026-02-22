@@ -83,7 +83,7 @@ const caseStudies = [
     title: "ONAS-Bizerte",
     category: "Géotechnique",
     location: "Bizerte",
-    year: "2024",
+    year: "2021",
     description: "Sondage à la tarière tariere",
   },
 ];
