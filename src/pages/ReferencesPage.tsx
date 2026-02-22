@@ -72,7 +72,7 @@ const caseStudies = [
   },
   {
     image: slideshow5,
-    title: "Route Nationale RN3 - Déviation",
+    title: "Geotechnique-Lac0",
     category: "Infrastructure",
     location: "Bizerte",
     year: "2023",
