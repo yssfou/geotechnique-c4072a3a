@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { AnimatedTitle } from "@/components/AnimatedTitle";
-import { Pickaxe, Droplets, Leaf, HardHat, ArrowRight, BookOpen, Shield, Building2, Factory, Landmark, Waves, Mountain, TreePine } from "lucide-react";
+import { Pickaxe, Leaf, HardHat, ArrowRight, BookOpen, Shield, Building2, Factory, Landmark, Waves, Mountain, TreePine } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Accordion,
@@ -26,21 +26,6 @@ const domaines = [
     definition: "La géotechnique est la science qui étudie les propriétés mécaniques, physiques et hydrauliques des sols et des roches. Elle est essentielle pour dimensionner les fondations et garantir la stabilité des ouvrages.",
     objectives: "Déterminer la nature et les caractéristiques du sol, évaluer la capacité portante, définir le type de fondations adapté et anticiper les risques de tassement.",
     risks: "Fondations inadaptées, tassements différentiels, glissements de terrain, effondrements, sinistres structurels coûteux.",
-  },
-  {
-    icon: Droplets,
-    title: "Hydrogéologie",
-    description: "Recherche et exploitation des ressources en eau souterraine. Études hydrogéologiques complètes pour l'identification des nappes phréatiques.",
-    details: [
-      "Études hydrogéologiques",
-      "Prospection géophysique",
-      "Diagraphies de forages",
-      "Tests de pompage",
-      "Modélisation des aquifères",
-    ],
-    definition: "L'hydrogéologie étudie les eaux souterraines, leur origine, leur circulation et leur exploitation. Cette discipline est cruciale pour l'alimentation en eau potable et l'industrie.",
-    objectives: "Localiser les nappes aquifères, évaluer les réserves exploitables, déterminer la qualité de l'eau et concevoir des ouvrages de captage durables.",
-    risks: "Épuisement des ressources, contamination des nappes, conflits d'usage, impacts sur l'environnement.",
   },
   {
     icon: Leaf,
@@ -175,7 +160,7 @@ export default function DomainesPage() {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground text-lg leading-relaxed"
             >
-              De même, les études environnementales et hydrogéologiques sont essentielles pour 
+              De même, les études environnementales sont essentielles pour 
               garantir la durabilité des projets et leur conformité aux réglementations en vigueur 
               en Tunisie et à l'international.
             </motion.p>
