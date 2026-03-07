@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import serviceGeotechnique from "@/assets/service-1.png";
+import serviceGeotechnique from "@/assets/service-sondage.jpg";
 import serviceEnvironment from "@/assets/service-2.png";
-import serviceTravaux from "@/assets/service-3.png";
+import serviceTravaux from "@/assets/service-conseil.jpg";
 import slideshow1 from "@/assets/projects/slideshow-1.jpg";
 import slideshow2 from "@/assets/projects/slideshow-2.jpg";
 import slideshow3 from "@/assets/projects/slideshow-3.jpg";
