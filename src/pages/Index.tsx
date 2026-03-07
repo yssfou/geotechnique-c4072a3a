@@ -4,7 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Pickaxe, Leaf, HardHat, CheckCircle, Target, FileSearch, FileText, Phone, Building2, Factory, Landmark, Home } from "lucide-react";
+import { ArrowRight, Pickaxe, Leaf, HardHat, Mountain, CheckCircle, Target, FileSearch, FileText, Phone, Building2, Factory, Landmark, Home } from "lucide-react";
 import { ClientsSection } from "@/components/ClientsSection";
 
 const domaines = [
@@ -15,6 +15,11 @@ const domaines = [
     href: "/domaines",
   },
   {
+    icon: Mountain,
+    title: "Carrière et Mines",
+    description: "Exploitation de carrières, études géologiques minières et stabilité des talus.",
+    href: "/domaines",
+  },
     icon: Leaf,
     title: "Environnement",
     description: "Études d'impact environnemental et diagnostic de pollution.",
