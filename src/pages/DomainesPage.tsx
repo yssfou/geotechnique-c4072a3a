@@ -42,6 +42,8 @@ const domaines = [
     objectives: "Évaluer les gisements, planifier l'exploitation, assurer la stabilité des ouvrages miniers et minimiser l'impact environnemental.",
     risks: "Instabilité des talus, éboulements, pollution des sols et des eaux, épuisement des ressources.",
   },
+  {
+    icon: Leaf,
     title: "Environnement",
     description: "Évaluations d'impact environnemental, études de pollution des sols et des eaux, conformité aux réglementations environnementales tunisiennes.",
     details: [

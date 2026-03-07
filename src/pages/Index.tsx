@@ -20,6 +20,7 @@ const domaines = [
     description: "Exploitation de carrières, études géologiques minières et stabilité des talus.",
     href: "/domaines",
   },
+  {
     icon: Leaf,
     title: "Environnement",
     description: "Études d'impact environnemental et diagnostic de pollution.",
