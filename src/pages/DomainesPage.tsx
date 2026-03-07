@@ -28,6 +28,21 @@ const domaines = [
     risks: "Fondations inadaptées, tassements différentiels, glissements de terrain, effondrements, sinistres structurels coûteux.",
   },
   {
+    icon: Mountain,
+    title: "Carrière et Mines",
+    description: "Exploitation de carrières, études géologiques minières, stabilité des talus et gestion des ressources minérales.",
+    details: [
+      "Études géologiques de gisements",
+      "Plans d'exploitation de carrières",
+      "Stabilité des talus et fronts de taille",
+      "Contrôle de tir de mines",
+      "Études d'impact des exploitations minières",
+    ],
+    definition: "L'exploitation des carrières et des mines concerne l'extraction des matériaux et minerais. Elle nécessite des études géologiques approfondies pour optimiser l'exploitation tout en assurant la sécurité.",
+    objectives: "Évaluer les gisements, planifier l'exploitation, assurer la stabilité des ouvrages miniers et minimiser l'impact environnemental.",
+    risks: "Instabilité des talus, éboulements, pollution des sols et des eaux, épuisement des ressources.",
+  },
+  {
     icon: Leaf,
     title: "Environnement",
     description: "Évaluations d'impact environnemental, études de pollution des sols et des eaux, conformité aux réglementations environnementales tunisiennes.",
