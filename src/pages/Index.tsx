@@ -4,7 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Pickaxe, Droplets, Leaf, HardHat, CheckCircle, Target, FileSearch, FileText, Phone, Building2, Factory, Landmark, Home } from "lucide-react";
+import { ArrowRight, Pickaxe, Leaf, HardHat, CheckCircle, Target, FileSearch, FileText, Phone, Building2, Factory, Landmark, Home } from "lucide-react";
 import { ClientsSection } from "@/components/ClientsSection";
 
 const domaines = [
@@ -12,12 +12,6 @@ const domaines = [
     icon: Pickaxe,
     title: "Géotechnique",
     description: "Études de sol, sondages carottés et essais in-situ pour vos projets de construction.",
-    href: "/domaines",
-  },
-  {
-    icon: Droplets,
-    title: "Hydrogéologie",
-    description: "Recherche et exploitation des ressources en eau souterraine.",
     href: "/domaines",
   },
   {
@@ -130,7 +124,7 @@ const Index = () => {
                 className="text-muted-foreground text-lg leading-relaxed mb-6"
               >
                 L'Entreprise Géologique et Géotechnique (EGG) est un bureau d'études spécialisé fondé en 2011. 
-                Notre expertise couvre l'ensemble des domaines de la géotechnique, de l'hydrogéologie et de l'environnement.
+                Notre expertise couvre l'ensemble des domaines de la géotechnique et de l'environnement.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
