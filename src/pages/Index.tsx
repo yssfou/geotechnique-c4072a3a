@@ -68,7 +68,7 @@ const secteurs = [
   { icon: Building2, label: "Bâtiments" },
   { icon: Factory, label: "Industrie" },
   { icon: Landmark, label: "Infrastructures" },
-  { icon: Home, label: "Résidentiel" },
+  
 ];
 
 const Index = () => {
