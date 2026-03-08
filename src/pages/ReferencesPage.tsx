@@ -31,7 +31,7 @@ const clients = [
   { name: "ACTE", logo: acte },
   { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
   { name: "Ministère des Finances", logo: ministereFinances },
-  { name: "Client 4", logo: client4 },
+  { name: "Hiwar", logo: hiwar },
   { name: "SCET", logo: scet },
   { name: "Avicenne", logo: avicenne },
   { name: "Client 5", logo: client5 },
