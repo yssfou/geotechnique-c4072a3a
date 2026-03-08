@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import serviceGeotechnique from "@/assets/service-sondage.jpg";
-import serviceEnvironment from "@/assets/service-2.png";
+import serviceEnvironment from "@/assets/service-environment.jpg";
 import serviceTravaux from "@/assets/service-conseil.jpg";
 import slideshow1 from "@/assets/projects/slideshow-1.jpg";
 import slideshow2 from "@/assets/projects/slideshow-2.jpg";
