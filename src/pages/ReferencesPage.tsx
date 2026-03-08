@@ -23,13 +23,13 @@ import slideshow5 from "@/assets/projects/slideshow-5.jpg";
 import slideshow6 from "@/assets/projects/slideshow-6.jpg";
 
 const clients = [
+  { name: "Habitat", logo: habitat },
   { name: "Client 1", logo: client1 },
   { name: "STEG", logo: steg },
   { name: "Client 4", logo: client4 },
   { name: "SCET", logo: scet },
   { name: "Avicenne", logo: avicenne },
   { name: "Client 5", logo: client5 },
-  { name: "Habitat", logo: habitat },
   { name: "ACTE", logo: acte },
   { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
   { name: "Econet", logo: econet },
