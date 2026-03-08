@@ -145,7 +145,7 @@ export default function ReferencesPage() {
             label="Notre Portfolio"
             title="Nos Références"
             highlightedWord="Références"
-            subtitle="Découvrez nos réalisations et les partenaires qui nous font confiance depuis plus de 12 ans."
+            subtitle="Découvrez nos réalisations et les partenaires qui nous font confiance depuis plus de 15 ans."
           />
         </div>
       </section>
