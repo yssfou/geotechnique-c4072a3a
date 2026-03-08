@@ -30,14 +30,14 @@ const clients = [
   { name: "Ministère de la Défense", logo: ministereDefense },
   { name: "ACTE", logo: acte },
   { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
-  { name: "STEG", logo: steg },
+  { name: "Ministère des Finances", logo: ministereFinances },
   { name: "Client 4", logo: client4 },
   { name: "SCET", logo: scet },
   { name: "Avicenne", logo: avicenne },
   { name: "Client 5", logo: client5 },
   { name: "Client 1", logo: client1 },
   { name: "Econet", logo: econet },
-  { name: "Ministère des Finances", logo: ministereFinances },
+  { name: "STEG", logo: steg },
   { name: "Hiwar", logo: hiwar },
 ];
 
