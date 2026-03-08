@@ -27,7 +27,7 @@ import slideshow6 from "@/assets/projects/slideshow-6.jpg";
 const clients = [
   { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
   { name: "Habitat", logo: habitat },
-  { name: "Ministère de la Défense", logo: ministereDefense },
+  { name: "Ministère de l'Éducation", logo: ministereEducation },
   { name: "ACTE", logo: acte },
   { name: "Ministère de l'Éducation", logo: ministereEducation },
   { name: "Ministère des Finances", logo: ministereFinances },
