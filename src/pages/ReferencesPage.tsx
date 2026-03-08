@@ -186,7 +186,7 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 150, delay: 0.1 }}
               className="text-3xl font-bold text-foreground mb-6"
             >
-              Plus de 12 Ans d'<span className="text-gradient">Expérience</span>
+              Plus de 15 Ans d'<span className="text-gradient">Expérience</span>
             </motion.h3>
             
             <motion.p
