@@ -5,6 +5,10 @@
 /* EGG Geotechnique Design System - Dark Professional Theme */
 
 @layer base {
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease;
+  }
+
   :root {
     /* Light mode - warm professional palette */
     --background: 30 20% 96%;
