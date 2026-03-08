@@ -467,7 +467,7 @@ export default function ReferencesPage() {
               { value: "1000+", label: "Projets Réalisés" },
               { value: "50+", label: "Clients Satisfaits" },
               { value: "24", label: "Gouvernorats Couverts" },
-              { value: "12+", label: "Années d'Expérience" },
+              { value: "15+", label: "Années d'Expérience" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
