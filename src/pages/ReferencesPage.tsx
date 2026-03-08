@@ -15,6 +15,7 @@ import ministereAgriculture from "@/assets/clients/ministere-agriculture.png";
 import econet from "@/assets/clients/econet.png";
 import ministereFinances from "@/assets/clients/ministere-finances.png";
 import hiwar from "@/assets/clients/hiwar.png";
+import ministereEducation from "@/assets/clients/ministere-education.png";
 import slideshow1 from "@/assets/projects/slideshow-1.jpg";
 import slideshow2 from "@/assets/projects/slideshow-2.jpg";
 import slideshow3 from "@/assets/projects/slideshow-3.jpg";
