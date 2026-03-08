@@ -15,6 +15,7 @@ import ministereAgriculture from "@/assets/clients/ministere-agriculture.png";
 import econet from "@/assets/clients/econet.png";
 import ministereFinances from "@/assets/clients/ministere-finances.png";
 import hiwar from "@/assets/clients/hiwar.png";
+import ministereEducation from "@/assets/clients/ministere-education.png";
 import slideshow1 from "@/assets/projects/slideshow-1.jpg";
 import slideshow2 from "@/assets/projects/slideshow-2.jpg";
 import slideshow3 from "@/assets/projects/slideshow-3.jpg";
@@ -24,6 +25,7 @@ import slideshow6 from "@/assets/projects/slideshow-6.jpg";
 
 const clients = [
   { name: "Habitat", logo: habitat },
+  { name: "Ministère de l'Éducation", logo: ministereEducation },
   { name: "Client 5", logo: client5 },
   { name: "Client 1", logo: client1 },
   { name: "STEG", logo: steg },
