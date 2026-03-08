@@ -111,7 +111,7 @@ export default function DomainesPage() {
             label="Notre Expertise"
             title="Domaines d'Activités"
             highlightedWord="Activités"
-            subtitle="Découvrez les différents domaines dans lesquels EGG excelle depuis plus de 12 ans d'expérience en Tunisie."
+            subtitle="Découvrez les différents domaines dans lesquels EGG excelle depuis plus de 15 ans d'expérience en Tunisie."
           />
         </div>
       </section>

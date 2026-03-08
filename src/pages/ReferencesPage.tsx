@@ -145,7 +145,7 @@ export default function ReferencesPage() {
             label="Notre Portfolio"
             title="Nos Références"
             highlightedWord="Références"
-            subtitle="Découvrez nos réalisations et les partenaires qui nous font confiance depuis plus de 12 ans."
+            subtitle="Découvrez nos réalisations et les partenaires qui nous font confiance depuis plus de 15 ans."
           />
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 150, delay: 0.1 }}
               className="text-3xl font-bold text-foreground mb-6"
             >
-              Plus de 12 Ans d'<span className="text-gradient">Expérience</span>
+              Plus de 15 Ans d'<span className="text-gradient">Expérience</span>
             </motion.h3>
             
             <motion.p
@@ -467,7 +467,7 @@ export default function ReferencesPage() {
               { value: "1000+", label: "Projets Réalisés" },
               { value: "50+", label: "Clients Satisfaits" },
               { value: "24", label: "Gouvernorats Couverts" },
-              { value: "12+", label: "Années d'Expérience" },
+              { value: "15+", label: "Années d'Expérience" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
