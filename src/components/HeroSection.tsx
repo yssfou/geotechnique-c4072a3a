@@ -101,10 +101,6 @@ export function HeroSection({
     category: "Environnement",
     title: "Études Environnementales"
   }, {
-    image: project3,
-    category: "Environnement",
-    title: "Études Environnementales"
-  }, {
     image: project4,
     category: "Travaux",
     title: "Travaux Spéciaux"
