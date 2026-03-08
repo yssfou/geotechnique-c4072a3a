@@ -38,7 +38,7 @@ const clients = [
   { name: "Client 1", logo: client1 },
   { name: "Econet", logo: econet },
   { name: "STEG", logo: steg },
-  { name: "Hiwar", logo: hiwar },
+  { name: "Client 4", logo: client4 },
 ];
 
 const caseStudies = [
