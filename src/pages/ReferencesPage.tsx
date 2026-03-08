@@ -465,7 +465,7 @@ export default function ReferencesPage() {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
               { value: "1000+", label: "Projets Réalisés" },
-              { value: "50+", label: "Clients Satisfaits" },
+              { value: "100+", label: "Clients Satisfaits" },
               { value: "24", label: "Gouvernorats Couverts" },
               { value: "15+", label: "Années d'Expérience" },
             ].map((stat, index) => (
