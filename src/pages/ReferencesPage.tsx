@@ -112,12 +112,6 @@ const sectors = [
     count: "150+",
   },
   {
-    icon: Home,
-    title: "Résidentiel",
-    description: "Villas, lotissements, ensembles résidentiels",
-    count: "300+",
-  },
-  {
     icon: Waves,
     title: "Ouvrages Hydrauliques",
     description: "Barrages, stations de pompage, réseaux d'eau",
