@@ -25,6 +25,7 @@ import slideshow6 from "@/assets/projects/slideshow-6.jpg";
 
 const clients = [
   { name: "Habitat", logo: habitat },
+  { name: "Ministère de l'Éducation", logo: ministereEducation },
   { name: "Client 5", logo: client5 },
   { name: "Client 1", logo: client1 },
   { name: "STEG", logo: steg },
