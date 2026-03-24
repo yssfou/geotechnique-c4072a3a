@@ -71,7 +71,6 @@ const services = [
       "Parois berlinoises et moulées",
       "Tirants d'ancrage précontraints",
       "Drainage et rabattement de nappe",
-      "Terrassements spéciaux",
     ],
   },
 ];
