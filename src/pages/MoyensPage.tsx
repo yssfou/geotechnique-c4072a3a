@@ -74,14 +74,8 @@ const equipe = [
   {
     icon: GraduationCap,
     title: "Ingénieurs Spécialisés",
-    count: "8",
+    count: "1",
     description: "Experts en géotechnique et environnement",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Certifications",
-    count: "ISO",
-    description: "Normes de qualité internationales",
   },
 ];
 
