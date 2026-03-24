@@ -47,19 +47,19 @@ const equipeDetails = [
   {
     icon: GraduationCap,
     title: "Ingénieurs Géotechniciens",
-    count: "8",
+    count: "3",
     description: "Experts diplômés en géotechnique et géologie, avec une expérience terrain significative.",
   },
   {
     icon: HardHat,
     title: "Techniciens de Terrain",
-    count: "12+",
+    count: "2",
     description: "Équipes formées aux techniques de forage et d'essais, garantissant la qualité des investigations.",
   },
   {
     icon: FlaskConical,
     title: "Laborantins",
-    count: "5",
+    count: "3",
     description: "Spécialistes des essais de laboratoire, assurant la précision des analyses de sol.",
   },
 ];
@@ -68,20 +68,14 @@ const equipe = [
   {
     icon: Users,
     title: "Équipe Technique",
-    count: "25+",
+    count: "18",
     description: "Professionnels qualifiés et expérimentés",
   },
   {
     icon: GraduationCap,
     title: "Ingénieurs Spécialisés",
-    count: "8",
+    count: "1",
     description: "Experts en géotechnique et environnement",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Certifications",
-    count: "ISO",
-    description: "Normes de qualité internationales",
   },
 ];
 
