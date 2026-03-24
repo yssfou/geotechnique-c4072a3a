@@ -68,7 +68,7 @@ const equipe = [
   {
     icon: Users,
     title: "Équipe Technique",
-    count: "25+",
+    count: "18",
     description: "Professionnels qualifiés et expérimentés",
   },
   {
