@@ -53,7 +53,7 @@ const equipeDetails = [
   {
     icon: HardHat,
     title: "Techniciens de Terrain",
-    count: "12+",
+    count: "2",
     description: "Équipes formées aux techniques de forage et d'essais, garantissant la qualité des investigations.",
   },
   {
