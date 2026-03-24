@@ -47,7 +47,7 @@ const equipeDetails = [
   {
     icon: GraduationCap,
     title: "Ingénieurs Géotechniciens",
-    count: "8",
+    count: "3",
     description: "Experts diplômés en géotechnique et géologie, avec une expérience terrain significative.",
   },
   {
