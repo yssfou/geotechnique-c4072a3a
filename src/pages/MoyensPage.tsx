@@ -59,7 +59,7 @@ const equipeDetails = [
   {
     icon: FlaskConical,
     title: "Laborantins",
-    count: "5",
+    count: "3",
     description: "Spécialistes des essais de laboratoire, assurant la précision des analyses de sol.",
   },
 ];
