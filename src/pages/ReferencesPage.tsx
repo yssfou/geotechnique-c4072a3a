@@ -9,7 +9,7 @@ import client4 from "@/assets/clients/client-4.gif";
 import scet from "@/assets/clients/scet.svg";
 import avicenne from "@/assets/clients/avicenne.jpg";
 import client5 from "@/assets/clients/client-5.png";
-import habitat from "@/assets/clients/habitat.png";
+import habitat from "@/assets/clients/mehat.png";
 import acte from "@/assets/clients/acte.png";
 import ministereAgriculture from "@/assets/clients/ministere-agriculture.png";
 import econet from "@/assets/clients/econet.png";
