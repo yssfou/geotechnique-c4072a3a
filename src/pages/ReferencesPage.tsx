@@ -257,12 +257,12 @@ export default function ReferencesPage() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.05 }}
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="flex items-center justify-center h-28 bg-card rounded-2xl p-4 border border-border/30 shadow-card transition-all duration-300 hover:border-primary/50 hover:shadow-glow"
+                className={`flex items-center justify-center bg-card rounded-2xl border border-border/30 shadow-card transition-all duration-300 hover:border-primary/50 hover:shadow-glow ${client.name === "Habitat" ? "h-36 p-3" : "h-28 p-4"}`}
               >
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="max-h-16 max-w-full object-contain transition-all duration-300"
+                  className={`max-w-full object-contain transition-all duration-300 ${client.name === "Habitat" ? "max-h-28" : "max-h-16"}`}
                 />
               </motion.div>
             ))}
