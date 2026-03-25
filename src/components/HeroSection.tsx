@@ -95,7 +95,7 @@ export function HeroSection({
   programs = [{
     image: project1,
     category: "Géotechnique",
-    title: "Sondages & Essais"
+    title: "Sondages & Essais En Situ"
   }, {
     image: project2,
     category: "Environnement",
