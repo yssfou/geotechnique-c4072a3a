@@ -72,7 +72,7 @@ const caseStudies = [
     category: "Géotechnique",
     location: "Touzeur",
     year: "2023",
-    description: "Étude de sol et dimensionnement des fondations pour une unité de transformation agroalimentaire avec zones de stockage.",
+    description: "Campagne géotechnique Gvt - Touzeur",
   },
   {
     image: slideshow5,
