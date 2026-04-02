@@ -80,7 +80,7 @@ const caseStudies = [
     category: "Infrastructure",
     location: "Lac0",
     year: "2023",
-    description: "Reconnaissance géotechnique pour 12 km de tracé routier. Sondages, essais de laboratoire et étude de stabilité des talus.",
+    description: "campagne géotechnique  Lac 0",
   },
   {
     image: slideshow6,
