@@ -6,26 +6,30 @@ import client4 from "@/assets/clients/client-4.gif";
 import scet from "@/assets/clients/scet.svg";
 import avicenne from "@/assets/clients/avicenne.jpg";
 import client5 from "@/assets/clients/client-5.png";
-import habitat from "@/assets/clients/habitat.png";
+import habitat from "@/assets/clients/mehat.png";
 import acte from "@/assets/clients/acte.png";
 import ministereAgriculture from "@/assets/clients/ministere-agriculture.png";
 import econet from "@/assets/clients/econet.png";
 import ministereFinances from "@/assets/clients/ministere-finances.png";
 import hiwar from "@/assets/clients/hiwar.png";
+import ministereEducation from "@/assets/clients/education.jpg";
+import ministereDefense from "@/assets/clients/ministere-defense-new.png";
 
 const clients = [
-  { name: "Client 1", logo: client1 },
-  { name: "STEG", logo: steg },
-  { name: "Client 4", logo: client4 },
+  { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
+  { name: "Habitat", logo: habitat },
+  { name: "Ministère de l'Éducation", logo: ministereEducation },
+  { name: "Ministère de la Défense", logo: ministereDefense },
+  { name: "ACTE", logo: acte },
+  { name: "Ministère des Finances", logo: ministereFinances },
+  { name: "Hiwar", logo: hiwar },
   { name: "SCET", logo: scet },
   { name: "Avicenne", logo: avicenne },
   { name: "Client 5", logo: client5 },
-  { name: "Habitat", logo: habitat },
-  { name: "ACTE", logo: acte },
-  { name: "Ministère de l'Agriculture", logo: ministereAgriculture },
+  { name: "Client 1", logo: client1 },
   { name: "Econet", logo: econet },
-  { name: "Ministère des Finances", logo: ministereFinances },
-  { name: "Hiwar", logo: hiwar },
+  { name: "STEG", logo: steg },
+  { name: "Client 4", logo: client4 },
 ];
 
 export const ClientsSection = () => {
@@ -67,12 +71,12 @@ export const ClientsSection = () => {
               {clients.map((client, index) => (
                 <div
                   key={`first-${client.name}-${index}`}
-                  className="flex-shrink-0 mx-6 flex items-center justify-center h-24 w-48 bg-card/80 backdrop-blur-sm rounded-xl p-4 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
+                  className="flex-shrink-0 mx-6 flex items-center justify-center h-36 w-64 bg-card/80 backdrop-blur-sm rounded-xl p-6 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
                 >
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-16 max-w-full object-contain transition-all duration-300"
+                    className="max-h-24 max-w-full object-contain transition-all duration-300"
                   />
                 </div>
               ))}
@@ -80,12 +84,12 @@ export const ClientsSection = () => {
               {clients.map((client, index) => (
                 <div
                   key={`second-${client.name}-${index}`}
-                  className="flex-shrink-0 mx-6 flex items-center justify-center h-24 w-48 bg-card/80 backdrop-blur-sm rounded-xl p-4 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
+                  className="flex-shrink-0 mx-6 flex items-center justify-center h-36 w-64 bg-card/80 backdrop-blur-sm rounded-xl p-6 border border-border/30 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
                 >
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-16 max-w-full object-contain transition-all duration-300"
+                    className="max-h-24 max-w-full object-contain transition-all duration-300"
                   />
                 </div>
               ))}
