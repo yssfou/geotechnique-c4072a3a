@@ -44,11 +44,11 @@ const clients = [
 const caseStudies = [
   {
     image: slideshow1,
-    title: "Complexe Résidentiel - Les Jardins de Carthage",
+    title: "Gvt - Touzeur",
     category: "Géotechnique",
     location: "Touzeur",
     year: "2024",
-    description: "Étude géotechnique complète pour un ensemble résidentiel de 150 logements. Sondages carottés, essais pressiométriques et recommandations de fondations superficielles.",
+    description: "#campagne #géotechnique  . Gvt - Touzeur",
   },
   {
     image: slideshow2,
