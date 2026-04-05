@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/drilling-hero.png";
 import project1 from "@/assets/projects/sondage-essais.jpg";
@@ -69,24 +70,8 @@ export function HeroSection({
   },
   title = "Entreprises Géologiques & Géotechniques",
   subtitle = "Spécialistes en sondages géotechniques, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
-  primaryAction = {
-    label: "Découvrir nos Services",
-    onClick: () => {
-      const element = document.querySelector("#services");
-      if (element) element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  },
-  secondaryAction = {
-    label: "En savoir plus",
-    onClick: () => {
-      const element = document.querySelector("#about");
-      if (element) element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  },
+  primaryAction: primaryActionProp,
+  secondaryAction: secondaryActionProp,
   disclaimer = "Experts en Géotechnique depuis 2011",
   socialProof = {
     avatars: [project1, project2, project3],
@@ -112,6 +97,18 @@ export function HeroSection({
   className,
   children
 }: HeroSectionProps) {
+  const navigate = useNavigate();
+  const primaryAction = primaryActionProp ?? {
+    label: "Découvrir nos Services",
+    onClick: () => navigate("/services")
+  };
+  const secondaryAction = secondaryActionProp ?? {
+    label: "En savoir plus",
+    onClick: () => navigate("/domaines")
+  };
+  
+  const handleCardClick = () => navigate("/services");
+
   return <section id="accueil" className={cn("relative min-h-screen flex flex-col overflow-hidden", className)}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
@@ -248,7 +245,7 @@ export function HeroSection({
             {[...programs, ...programs].map((program, index) => <motion.div key={index} whileHover={{
           scale: 1.02,
           y: -5
-        }} onClick={program.onClick} className="relative flex-shrink-0 w-72 h-48 rounded-2xl overflow-hidden cursor-pointer group">
+        }} onClick={program.onClick || handleCardClick} className="relative flex-shrink-0 w-72 h-48 rounded-2xl overflow-hidden cursor-pointer group">
                 {/* Image */}
                 <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
 
