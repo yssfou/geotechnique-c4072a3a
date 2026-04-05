@@ -97,6 +97,18 @@ export function HeroSection({
   className,
   children
 }: HeroSectionProps) {
+  const navigate = useNavigate();
+  const primaryAction = primaryActionProp ?? {
+    label: "Découvrir nos Services",
+    onClick: () => navigate("/services")
+  };
+  const secondaryAction = secondaryActionProp ?? {
+    label: "En savoir plus",
+    onClick: () => navigate("/domaines")
+  };
+  
+  const handleCardClick = () => navigate("/services");
+
   return <section id="accueil" className={cn("relative min-h-screen flex flex-col overflow-hidden", className)}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
