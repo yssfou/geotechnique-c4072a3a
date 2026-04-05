@@ -52,7 +52,7 @@ const caseStudies = [
   },
   {
     image: slideshow2,
-    title: "SRBG - Pont de Bizerte",
+    title: "Pont de Bizerte",
     category: "Environnement",
     location: "Bizerte",
     year: "2024",
@@ -84,11 +84,11 @@ const caseStudies = [
   },
   {
     image: slideshow6,
-    title: "ONAS-Bizerte",
+    title: "Bizerte",
     category: "Géotechnique",
     location: "Bizerte",
     year: "2021",
-    description: "Sondage à la tarière tariere",
+    description: "Sondage à la tarière",
   },
 ];
 
