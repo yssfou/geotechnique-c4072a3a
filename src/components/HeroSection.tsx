@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/drilling-hero.png";
 import project1 from "@/assets/projects/sondage-essais.jpg";
@@ -69,24 +70,8 @@ export function HeroSection({
   },
   title = "Entreprises Géologiques & Géotechniques",
   subtitle = "Spécialistes en sondages géotechniques, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
-  primaryAction = {
-    label: "Découvrir nos Services",
-    onClick: () => {
-      const element = document.querySelector("#services");
-      if (element) element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  },
-  secondaryAction = {
-    label: "En savoir plus",
-    onClick: () => {
-      const element = document.querySelector("#about");
-      if (element) element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  },
+  primaryAction: primaryActionProp,
+  secondaryAction: secondaryActionProp,
   disclaimer = "Experts en Géotechnique depuis 2011",
   socialProof = {
     avatars: [project1, project2, project3],
