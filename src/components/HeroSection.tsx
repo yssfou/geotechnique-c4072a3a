@@ -245,7 +245,7 @@ export function HeroSection({
             {[...programs, ...programs].map((program, index) => <motion.div key={index} whileHover={{
           scale: 1.02,
           y: -5
-        }} onClick={program.onClick} className="relative flex-shrink-0 w-72 h-48 rounded-2xl overflow-hidden cursor-pointer group">
+        }} onClick={program.onClick || handleCardClick} className="relative flex-shrink-0 w-72 h-48 rounded-2xl overflow-hidden cursor-pointer group">
                 {/* Image */}
                 <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
 
