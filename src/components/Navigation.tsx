@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
+import logoEgg from "@/assets/logo-egg.png";
 
 interface NavigationItem {
   label: string;
@@ -58,9 +59,9 @@ export function Navigation() {
           <Link to="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-primary cursor-pointer"
+              className="cursor-pointer"
             >
-              EGG
+              <img src={logoEgg} alt="EGG - Entreprises Géologiques et Géotechniques" className="h-10 w-auto" />
             </motion.div>
           </Link>
 
