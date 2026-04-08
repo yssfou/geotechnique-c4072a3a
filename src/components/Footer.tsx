@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoEggFooter from "@/assets/logo-egg-footer.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
