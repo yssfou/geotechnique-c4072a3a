@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoEggFooter from "@/assets/logo-egg-footer.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +19,7 @@ export function Footer() {
             className="md:col-span-2"
           >
             <Link to="/">
-              <h3 className="text-3xl font-bold text-gradient mb-4">EGG</h3>
+              <img src={logoEggFooter} alt="EGG" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
               Entreprises Géologiques et Géotechniques - Votre partenaire de
