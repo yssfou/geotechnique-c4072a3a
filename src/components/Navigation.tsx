@@ -59,9 +59,9 @@ export function Navigation() {
           <Link to="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-primary cursor-pointer"
+              className="cursor-pointer"
             >
-              EGG
+              <img src={logoEgg} alt="EGG - Entreprises Géologiques et Géotechniques" className="h-10 w-auto" />
             </motion.div>
           </Link>
 
