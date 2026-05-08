@@ -4,6 +4,8 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
+import { useT } from "@/contexts/LanguageContext";
 import logoEgg from "@/assets/logo-egg.png";
 
 interface NavigationItem {
@@ -12,19 +14,20 @@ interface NavigationItem {
   isRoute?: boolean;
 }
 
-const navigationItems: NavigationItem[] = [
-  { label: "Accueil", href: "/", isRoute: true },
-  { label: "Domaines", href: "/domaines", isRoute: true },
-  { label: "Services", href: "/services", isRoute: true },
-  { label: "Moyens", href: "/moyens", isRoute: true },
-  { label: "Références", href: "/references", isRoute: true },
-  { label: "Contact", href: "/contact", isRoute: true },
-];
-
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const t = useT();
+
+  const navigationItems: NavigationItem[] = [
+    { label: t("Accueil", "Home"), href: "/", isRoute: true },
+    { label: t("Domaines", "Domains"), href: "/domaines", isRoute: true },
+    { label: t("Services", "Services"), href: "/services", isRoute: true },
+    { label: t("Moyens", "Resources"), href: "/moyens", isRoute: true },
+    { label: t("Références", "References"), href: "/references", isRoute: true },
+    { label: t("Contact", "Contact"), href: "/contact", isRoute: true },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,6 +95,7 @@ export function Navigation() {
 
           {/* CTA + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageToggle />
             <ThemeToggle />
             <Link to="/contact">
               <motion.button
@@ -99,18 +103,22 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-medium hover:shadow-glow transition-all"
               >
-                Contactez-nous
+                {t("Contactez-nous", "Contact us")}
               </motion.button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -155,7 +163,7 @@ export function Navigation() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-medium mt-4 text-center"
                 >
-                  Contactez-nous
+                  {t("Contactez-nous", "Contact us")}
                 </Link>
               </motion.div>
             </nav>
