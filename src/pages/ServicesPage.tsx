@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useT } from "@/contexts/LanguageContext";
 import serviceGeotechnique from "@/assets/service-sondage.jpg";
 import serviceEnvironment from "@/assets/service-environment.jpg";
 import serviceTravaux from "@/assets/service-conseil.jpg";
@@ -22,105 +23,91 @@ import slideshow6 from "@/assets/projects/slideshow-6.jpg";
 
 const projectImages = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5, slideshow6];
 
-const services = [
-  {
-    image: serviceGeotechnique,
-    title: "Sondages Géotechniques",
-    category: "Géotechnique",
-    description: "Études de sol approfondies pour vos projets de construction. Analyses précises et rapports détaillés conformes aux normes internationales.",
-    objectives: "Caractériser le sol, déterminer la capacité portante, dimensionner les fondations et anticiper les risques de tassement.",
-    methods: "Sondages carottés, essais pressiométriques Ménard, pénétromètres statiques et dynamiques, prélèvements d'échantillons intacts.",
-    deliverables: "Rapport géotechnique complet avec coupes lithologiques, résultats d'essais, recommandations de fondations et notes de calcul.",
-    features: [
-      "Sondages carottés jusqu'à 100m de profondeur",
-      "Essais pressiométriques Ménard",
-      "Essais au pénétromètre dynamique",
-      "Prélèvements d'échantillons intacts",
-      "Rapports géotechniques détaillés",
-      "Recommandations de fondations",
-    ],
-  },
-  {
-    image: serviceEnvironment,
-    title: "Études Environnementales",
-    category: "Environnement",
-    description: "Évaluations d'impact environnemental complètes. Protection des ressources naturelles et conformité aux réglementations tunisiennes.",
-    objectives: "Évaluer les impacts environnementaux d'un projet, proposer des mesures d'atténuation et garantir la conformité réglementaire.",
-    methods: "Analyse documentaire, investigations terrain, prélèvements et analyses, modélisation des impacts, consultation des parties prenantes.",
-    deliverables: "Étude d'impact environnemental, plan de gestion environnementale, rapport d'audit, cahier des charges de suivi.",
-    features: [
-      "Études d'impact environnemental (EIE)",
-      "Diagnostic de pollution des sols",
-      "Analyse de la qualité des eaux",
-      "Plans de gestion environnementale",
-      "Audits de conformité",
-      "Suivi environnemental",
-    ],
-  },
-  {
-    image: serviceTravaux,
-    title: "Travaux Spéciaux",
-    category: "Construction",
-    description: "Fondations profondes, consolidation des sols et travaux de génie civil spécialisés avec équipements de pointe.",
-    objectives: "Réaliser des fondations adaptées aux sols difficiles, stabiliser les terrains instables et permettre la construction en site contraint.",
-    methods: "Micropieux, pieux forés, injection de coulis, parois moulées, tirants d'ancrage, drainage et rabattement de nappe.",
-    deliverables: "Plans d'exécution, notes de calcul, rapport d'essais de réception, procès-verbaux de récolement.",
-    features: [
-      "Micropieux et pieux forés",
-      "Injection de consolidation",
-      "Parois berlinoises et moulées",
-      "Tirants d'ancrage précontraints",
-      "Drainage et rabattement de nappe",
-    ],
-  },
-];
-
-const faq = [
-  {
-    question: "Quand faut-il réaliser une étude géotechnique ?",
-    answer: "Une étude géotechnique doit être réalisée avant le début de tout projet de construction. Elle est obligatoire pour les permis de construire de bâtiments importants et fortement recommandée pour les constructions individuelles. Idéalement, elle doit intervenir dès la phase de conception pour optimiser le projet.",
-  },
-  {
-    question: "Combien de temps dure une étude géotechnique ?",
-    answer: "La durée dépend de la complexité du projet et du nombre de sondages requis. En général, comptez 1 à 2 semaines pour les investigations terrain et 2 à 3 semaines pour la rédaction du rapport. Pour les projets simples, le délai total peut être de 3 à 4 semaines.",
-  },
-  {
-    question: "Quels sont les types de sondages proposés ?",
-    answer: "Nous proposons différents types de sondages : sondages carottés (prélèvement d'échantillons intacts), sondages destructifs (reconnaissance rapide), essais pressiométriques (caractérisation mécanique), et essais au pénétromètre (résistance du sol). Le choix dépend de la nature du projet et des objectifs de l'étude.",
-  },
-  {
-    question: "L'étude d'impact environnemental est-elle obligatoire ?",
-    answer: "En Tunisie, l'étude d'impact environnemental (EIE) est obligatoire pour de nombreux projets : industries, infrastructures, zones touristiques, projets agricoles d'envergure. La liste des projets soumis à EIE est définie par la réglementation tunisienne (décret n°2005-1991).",
-  },
-  {
-    question: "Comment est établi le devis d'une prestation ?",
-    answer: "Le devis est établi après analyse de votre projet : localisation, surface, type de construction, objectifs de l'étude. Nous prenons en compte le nombre et la profondeur des sondages, les essais à réaliser et le niveau de détail du rapport. N'hésitez pas à nous contacter pour un devis personnalisé.",
-  },
-  {
-    question: "Intervenez-vous sur tout le territoire tunisien ?",
-    answer: "Oui, EGG intervient sur l'ensemble du territoire tunisien. Nos équipes sont mobiles et équipées pour réaliser des missions dans les 24 gouvernorats. Nous avons une expérience significative dans toutes les régions, des zones urbaines aux sites isolés.",
-  },
-];
-
-const introFeatures = [
-  {
-    icon: Target,
-    title: "Précision",
-    description: "Équipements calibrés et méthodes rigoureuses",
-  },
-  {
-    icon: FileText,
-    title: "Conformité",
-    description: "Respect des normes françaises et européennes",
-  },
-  {
-    icon: Clock,
-    title: "Réactivité",
-    description: "Délais optimisés sans compromis sur la qualité",
-  },
-];
-
 export default function ServicesPage() {
+  const t = useT();
+  const services = [
+    {
+      image: serviceGeotechnique,
+      title: t("Sondages Géotechniques", "Geotechnical Drilling"),
+      category: t("Géotechnique", "Geotechnics"),
+      description: t("Études de sol approfondies pour vos projets de construction. Analyses précises et rapports détaillés conformes aux normes internationales.", "In-depth soil studies for your construction projects. Accurate analyses and detailed reports compliant with international standards."),
+      objectives: t("Caractériser le sol, déterminer la capacité portante, dimensionner les fondations et anticiper les risques de tassement.", "Characterize the soil, determine bearing capacity, size foundations and anticipate settlement risks."),
+      methods: t("Sondages carottés, essais pressiométriques Ménard, pénétromètres statiques et dynamiques, prélèvements d'échantillons intacts.", "Core drilling, Ménard pressuremeter tests, static and dynamic penetrometers, intact sample collection."),
+      deliverables: t("Rapport géotechnique complet avec coupes lithologiques, résultats d'essais, recommandations de fondations et notes de calcul.", "Full geotechnical report with lithological logs, test results, foundation recommendations and design notes."),
+      features: [
+        t("Sondages carottés jusqu'à 100m de profondeur", "Core drilling down to 100m depth"),
+        t("Essais pressiométriques Ménard", "Ménard pressuremeter tests"),
+        t("Essais au pénétromètre dynamique", "Dynamic penetrometer tests"),
+        t("Prélèvements d'échantillons intacts", "Intact sample collection"),
+        t("Rapports géotechniques détaillés", "Detailed geotechnical reports"),
+        t("Recommandations de fondations", "Foundation recommendations"),
+      ],
+    },
+    {
+      image: serviceEnvironment,
+      title: t("Études Environnementales", "Environmental Studies"),
+      category: t("Environnement", "Environment"),
+      description: t("Évaluations d'impact environnemental complètes. Protection des ressources naturelles et conformité aux réglementations tunisiennes.", "Comprehensive environmental impact assessments. Protection of natural resources and compliance with Tunisian regulations."),
+      objectives: t("Évaluer les impacts environnementaux d'un projet, proposer des mesures d'atténuation et garantir la conformité réglementaire.", "Assess a project's environmental impacts, propose mitigation measures and ensure regulatory compliance."),
+      methods: t("Analyse documentaire, investigations terrain, prélèvements et analyses, modélisation des impacts, consultation des parties prenantes.", "Documentary analysis, field investigations, sampling and analysis, impact modeling, stakeholder consultation."),
+      deliverables: t("Étude d'impact environnemental, plan de gestion environnementale, rapport d'audit, cahier des charges de suivi.", "Environmental impact assessment, environmental management plan, audit report, monitoring specifications."),
+      features: [
+        t("Études d'impact environnemental (EIE)", "Environmental Impact Assessments (EIA)"),
+        t("Diagnostic de pollution des sols", "Soil pollution diagnostics"),
+        t("Analyse de la qualité des eaux", "Water quality analysis"),
+        t("Plans de gestion environnementale", "Environmental management plans"),
+        t("Audits de conformité", "Compliance audits"),
+        t("Suivi environnemental", "Environmental monitoring"),
+      ],
+    },
+    {
+      image: serviceTravaux,
+      title: t("Travaux Spéciaux", "Special Works"),
+      category: t("Construction", "Construction"),
+      description: t("Fondations profondes, consolidation des sols et travaux de génie civil spécialisés avec équipements de pointe.", "Deep foundations, soil consolidation and specialized civil works with state-of-the-art equipment."),
+      objectives: t("Réaliser des fondations adaptées aux sols difficiles, stabiliser les terrains instables et permettre la construction en site contraint.", "Build foundations suited to difficult soils, stabilize unstable ground and enable construction on constrained sites."),
+      methods: t("Micropieux, pieux forés, injection de coulis, parois moulées, tirants d'ancrage, drainage et rabattement de nappe.", "Micropiles, bored piles, grout injection, diaphragm walls, ground anchors, drainage and groundwater lowering."),
+      deliverables: t("Plans d'exécution, notes de calcul, rapport d'essais de réception, procès-verbaux de récolement.", "Execution drawings, design notes, acceptance test report, as-built records."),
+      features: [
+        t("Micropieux et pieux forés", "Micropiles and bored piles"),
+        t("Injection de consolidation", "Consolidation grouting"),
+        t("Parois berlinoises et moulées", "Berlin and diaphragm walls"),
+        t("Tirants d'ancrage précontraints", "Prestressed ground anchors"),
+        t("Drainage et rabattement de nappe", "Drainage and groundwater lowering"),
+      ],
+    },
+  ];
+  const faq = [
+    {
+      question: t("Quand faut-il réaliser une étude géotechnique ?", "When should a geotechnical study be carried out?"),
+      answer: t("Une étude géotechnique doit être réalisée avant le début de tout projet de construction. Elle est obligatoire pour les permis de construire de bâtiments importants et fortement recommandée pour les constructions individuelles. Idéalement, elle doit intervenir dès la phase de conception pour optimiser le projet.", "A geotechnical study should be carried out before the start of any construction project. It is mandatory for permits on large buildings and strongly recommended for individual homes. Ideally it happens during the design phase to optimize the project."),
+    },
+    {
+      question: t("Combien de temps dure une étude géotechnique ?", "How long does a geotechnical study take?"),
+      answer: t("La durée dépend de la complexité du projet et du nombre de sondages requis. En général, comptez 1 à 2 semaines pour les investigations terrain et 2 à 3 semaines pour la rédaction du rapport. Pour les projets simples, le délai total peut être de 3 à 4 semaines.", "Duration depends on the project's complexity and the number of boreholes required. Typically count 1–2 weeks for field investigations and 2–3 weeks to write the report. Simple projects can take 3–4 weeks in total."),
+    },
+    {
+      question: t("Quels sont les types de sondages proposés ?", "What types of drilling do you offer?"),
+      answer: t("Nous proposons différents types de sondages : sondages carottés (prélèvement d'échantillons intacts), sondages destructifs (reconnaissance rapide), essais pressiométriques (caractérisation mécanique), et essais au pénétromètre (résistance du sol). Le choix dépend de la nature du projet et des objectifs de l'étude.", "We offer different types of drilling: core drilling (intact sample collection), destructive drilling (fast reconnaissance), pressuremeter tests (mechanical characterization) and penetrometer tests (soil resistance). The choice depends on the project and study objectives."),
+    },
+    {
+      question: t("L'étude d'impact environnemental est-elle obligatoire ?", "Is the environmental impact assessment mandatory?"),
+      answer: t("En Tunisie, l'étude d'impact environnemental (EIE) est obligatoire pour de nombreux projets : industries, infrastructures, zones touristiques, projets agricoles d'envergure. La liste des projets soumis à EIE est définie par la réglementation tunisienne (décret n°2005-1991).", "In Tunisia, the Environmental Impact Assessment (EIA) is mandatory for many projects: industries, infrastructure, tourism zones, large agricultural projects. The list of projects subject to EIA is defined by Tunisian regulations (decree n°2005-1991)."),
+    },
+    {
+      question: t("Comment est établi le devis d'une prestation ?", "How is a quote prepared?"),
+      answer: t("Le devis est établi après analyse de votre projet : localisation, surface, type de construction, objectifs de l'étude. Nous prenons en compte le nombre et la profondeur des sondages, les essais à réaliser et le niveau de détail du rapport. N'hésitez pas à nous contacter pour un devis personnalisé.", "The quote is prepared after analyzing your project: location, area, type of construction, study objectives. We account for the number and depth of boreholes, tests to perform and the level of detail of the report. Contact us for a personalized quote."),
+    },
+    {
+      question: t("Intervenez-vous sur tout le territoire tunisien ?", "Do you operate across the whole of Tunisia?"),
+      answer: t("Oui, EGG intervient sur l'ensemble du territoire tunisien. Nos équipes sont mobiles et équipées pour réaliser des missions dans les 24 gouvernorats. Nous avons une expérience significative dans toutes les régions, des zones urbaines aux sites isolés.", "Yes, EGG operates throughout Tunisia. Our teams are mobile and equipped to carry out missions in all 24 governorates. We have significant experience across all regions, from urban areas to remote sites."),
+    },
+  ];
+  const introFeatures = [
+    { icon: Target, title: t("Précision", "Precision"), description: t("Équipements calibrés et méthodes rigoureuses", "Calibrated equipment and rigorous methods") },
+    { icon: FileText, title: t("Conformité", "Compliance"), description: t("Respect des normes françaises et européennes", "Compliance with French and European standards") },
+    { icon: Clock, title: t("Réactivité", "Responsiveness"), description: t("Délais optimisés sans compromis sur la qualité", "Optimized timelines without compromising quality") },
+  ];
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -137,10 +124,13 @@ export default function ServicesPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedTitle
-            label="Ce Que Nous Offrons"
-            title="Nos Services"
-            highlightedWord="Services"
-            subtitle="Une gamme complète de services géotechniques et environnementaux, adaptés à vos besoins spécifiques."
+            label={t("Ce Que Nous Offrons", "What We Offer")}
+            title={t("Nos Services", "Our Services")}
+            highlightedWord={t("Services", "Services")}
+            subtitle={t(
+              "Une gamme complète de services géotechniques et environnementaux, adaptés à vos besoins spécifiques.",
+              "A complete range of geotechnical and environmental services, tailored to your specific needs."
+            )}
           />
         </div>
       </section>
@@ -171,7 +161,7 @@ export default function ServicesPage() {
               transition={{ type: "spring", stiffness: 150, delay: 0.1 }}
               className="text-3xl font-bold text-foreground mb-6"
             >
-              Des Prestations <span className="text-gradient">Sur Mesure</span>
+              {t("Des Prestations ", "Tailor-made ")}<span className="text-gradient">{t("Sur Mesure", "Services")}</span>
             </motion.h3>
             
             <motion.p
@@ -181,9 +171,10 @@ export default function ServicesPage() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg leading-relaxed"
             >
-              EGG propose une gamme complète de services géotechniques et environnementaux. 
-              Chaque prestation est adaptée aux spécificités de votre projet, garantissant 
-              des résultats fiables et exploitables pour la conception et la réalisation de vos ouvrages.
+              {t(
+                "EGG propose une gamme complète de services géotechniques et environnementaux. Chaque prestation est adaptée aux spécificités de votre projet, garantissant des résultats fiables et exploitables pour la conception et la réalisation de vos ouvrages.",
+                "EGG offers a complete range of geotechnical and environmental services. Each service is tailored to the specifics of your project, ensuring reliable, actionable results for the design and execution of your works."
+              )}
             </motion.p>
           </motion.div>
 
@@ -281,7 +272,7 @@ export default function ServicesPage() {
                   <Accordion type="single" collapsible className="w-full mb-6">
                     <AccordionItem value="objectives" className="border-border/30">
                       <AccordionTrigger className="text-foreground hover:text-primary">
-                        Objectifs
+                        {t("Objectifs", "Objectives")}
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
                         {service.objectives}
@@ -290,7 +281,7 @@ export default function ServicesPage() {
                     
                     <AccordionItem value="methods" className="border-border/30">
                       <AccordionTrigger className="text-foreground hover:text-primary">
-                        Méthodes
+                        {t("Méthodes", "Methods")}
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
                         {service.methods}
@@ -299,7 +290,7 @@ export default function ServicesPage() {
                     
                     <AccordionItem value="deliverables" className="border-border/30">
                       <AccordionTrigger className="text-foreground hover:text-primary">
-                        Livrables
+                        {t("Livrables", "Deliverables")}
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
                         {service.deliverables}
@@ -329,7 +320,7 @@ export default function ServicesPage() {
                       whileTap={{ scale: 0.95 }}
                       className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:shadow-glow transition-all"
                     >
-                      Demander un Devis
+                      {t("Demander un Devis", "Request a Quote")}
                       <ArrowRight className="w-4 h-4" />
                     </motion.button>
                   </Link>
@@ -376,10 +367,13 @@ export default function ServicesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Questions <span className="text-gradient">Fréquentes</span>
+              {t("Questions ", "Frequently Asked ")}<span className="text-gradient">{t("Fréquentes", "Questions")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Les réponses aux questions les plus courantes sur nos services géotechniques.
+              {t(
+                "Les réponses aux questions les plus courantes sur nos services géotechniques.",
+                "Answers to the most common questions about our geotechnical services."
+              )}
             </p>
           </motion.div>
 
@@ -416,7 +410,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.5 }}
             className="text-center mt-12"
           >
-            <p className="text-muted-foreground mb-4">Vous avez d'autres questions ?</p>
+            <p className="text-muted-foreground mb-4">{t("Vous avez d'autres questions ?", "Have other questions?")}</p>
             <Link to="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -424,7 +418,7 @@ export default function ServicesPage() {
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:shadow-glow transition-all"
               >
                 <Phone className="w-4 h-4" />
-                Contactez-Nous
+                {t("Contactez-Nous", "Contact Us")}
               </motion.button>
             </Link>
           </motion.div>
@@ -435,9 +429,9 @@ export default function ServicesPage() {
       <section className="py-16 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6 mb-12">
           <AnimatedTitle
-            label="Nos Réalisations"
-            title="Projets Récents"
-            highlightedWord="Récents"
+            label={t("Nos Réalisations", "Our Achievements")}
+            title={t("Projets Récents", "Recent Projects")}
+            highlightedWord={t("Récents", "Recent")}
           />
         </div>
 
