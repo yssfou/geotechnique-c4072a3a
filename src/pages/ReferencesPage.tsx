@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { AnimatedTitle } from "@/components/AnimatedTitle";
 import { Building2, Factory, Landmark, Home, Waves, TreePine, MapPin, Calendar, Award } from "lucide-react";
+import { useT } from "@/contexts/LanguageContext";
 import client1 from "@/assets/clients/client-1.webp";
 import steg from "@/assets/clients/steg.png";
 import client4 from "@/assets/clients/client-4.gif";
@@ -41,91 +42,23 @@ const clients = [
   { name: "Client 4", logo: client4 },
 ];
 
-const caseStudies = [
-  {
-    image: slideshow1,
-    title: "Gvt - Touzeur",
-    category: "Géotechnique",
-    location: "Touzeur",
-    year: "2024",
-    description: "#campagne #géotechnique  . Gvt - Touzeur",
-  },
-  {
-    image: slideshow2,
-    title: "Pont de Bizerte",
-    category: "Environnement",
-    location: "Bizerte",
-    year: "2024",
-    description: "SRBG pont de Bizerte",
-  },
-  {
-    image: slideshow3,
-    title: "Mosquée Okba Ibn Nafaa",
-    category: "Travaux Spéciaux",
-    location: "Kairouan",
-    year: "2023",
-    description: "GVt Kairouan. Mosquée Okba Ibn Nafaa",
-  },
-  {
-    image: slideshow4,
-    title: "Campagne géotechnique Gvt - Touzeur",
-    category: "Géotechnique",
-    location: "Touzeur",
-    year: "2023",
-    description: "Campagne géotechnique Gvt - Touzeur",
-  },
-  {
-    image: slideshow5,
-    title: "Geotechnique-Lac0",
-    category: "Infrastructure",
-    location: "Lac0",
-    year: "2023",
-    description: "campagne géotechnique  Lac 0",
-  },
-  {
-    image: slideshow6,
-    title: "Bizerte",
-    category: "Géotechnique",
-    location: "Bizerte",
-    year: "2021",
-    description: "Sondage à la tarière",
-  },
-];
-
-const sectors = [
-  {
-    icon: Building2,
-    title: "Bâtiments",
-    description: "Immeubles résidentiels, bureaux, hôpitaux, établissements scolaires",
-    count: "500+",
-  },
-  {
-    icon: Factory,
-    title: "Industrie",
-    description: "Usines, entrepôts, zones industrielles, unités de production",
-    count: "200+",
-  },
-  {
-    icon: Landmark,
-    title: "Infrastructures",
-    description: "Routes, ponts, ouvrages d'art, réseaux",
-    count: "150+",
-  },
-  {
-    icon: Waves,
-    title: "Ouvrages Hydrauliques",
-    description: "Barrages, stations de pompage, réseaux d'eau",
-    count: "50+",
-  },
-  {
-    icon: TreePine,
-    title: "Environnement",
-    description: "Études d'impact, dépollution, gestion des déchets",
-    count: "100+",
-  },
-];
-
 export default function ReferencesPage() {
+  const t = useT();
+  const caseStudies = [
+    { image: slideshow1, title: t("Gvt - Touzeur", "Govt - Tozeur"), category: t("Géotechnique", "Geotechnics"), location: t("Touzeur", "Tozeur"), year: "2024", description: t("#campagne #géotechnique  . Gvt - Touzeur", "Geotechnical campaign — Govt - Tozeur") },
+    { image: slideshow2, title: t("Pont de Bizerte", "Bizerte Bridge"), category: t("Environnement", "Environment"), location: "Bizerte", year: "2024", description: t("SRBG pont de Bizerte", "SRBG Bizerte Bridge") },
+    { image: slideshow3, title: t("Mosquée Okba Ibn Nafaa", "Okba Ibn Nafaa Mosque"), category: t("Travaux Spéciaux", "Special Works"), location: "Kairouan", year: "2023", description: t("GVt Kairouan. Mosquée Okba Ibn Nafaa", "Govt Kairouan — Okba Ibn Nafaa Mosque") },
+    { image: slideshow4, title: t("Campagne géotechnique Gvt - Touzeur", "Geotechnical campaign — Govt - Tozeur"), category: t("Géotechnique", "Geotechnics"), location: t("Touzeur", "Tozeur"), year: "2023", description: t("Campagne géotechnique Gvt - Touzeur", "Geotechnical campaign — Govt - Tozeur") },
+    { image: slideshow5, title: t("Geotechnique-Lac0", "Geotechnics - Lac 0"), category: t("Infrastructure", "Infrastructure"), location: "Lac 0", year: "2023", description: t("campagne géotechnique  Lac 0", "Geotechnical campaign Lac 0") },
+    { image: slideshow6, title: "Bizerte", category: t("Géotechnique", "Geotechnics"), location: "Bizerte", year: "2021", description: t("Sondage à la tarière", "Auger drilling") },
+  ];
+  const sectors = [
+    { icon: Building2, title: t("Bâtiments", "Buildings"), description: t("Immeubles résidentiels, bureaux, hôpitaux, établissements scolaires", "Residential buildings, offices, hospitals, schools"), count: "500+" },
+    { icon: Factory, title: t("Industrie", "Industry"), description: t("Usines, entrepôts, zones industrielles, unités de production", "Factories, warehouses, industrial zones, production units"), count: "200+" },
+    { icon: Landmark, title: t("Infrastructures", "Infrastructure"), description: t("Routes, ponts, ouvrages d'art, réseaux", "Roads, bridges, civil structures, networks"), count: "150+" },
+    { icon: Waves, title: t("Ouvrages Hydrauliques", "Hydraulic Works"), description: t("Barrages, stations de pompage, réseaux d'eau", "Dams, pumping stations, water networks"), count: "50+" },
+    { icon: TreePine, title: t("Environnement", "Environment"), description: t("Études d'impact, dépollution, gestion des déchets", "Impact studies, remediation, waste management"), count: "100+" },
+  ];
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -142,10 +75,13 @@ export default function ReferencesPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedTitle
-            label="Notre Portfolio"
-            title="Nos Références"
-            highlightedWord="Références"
-            subtitle="Découvrez nos réalisations et les partenaires qui nous font confiance depuis plus de 15 ans."
+            label={t("Notre Portfolio", "Our Portfolio")}
+            title={t("Nos Références", "Our References")}
+            highlightedWord={t("Références", "References")}
+            subtitle={t(
+              "Découvrez nos réalisations et les partenaires qui nous font confiance depuis plus de 15 ans.",
+              "Discover our achievements and the partners who have trusted us for more than 15 years."
+            )}
           />
         </div>
       </section>
@@ -186,7 +122,7 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 150, delay: 0.1 }}
               className="text-3xl font-bold text-foreground mb-6"
             >
-              Plus de 15 Ans d'<span className="text-gradient">Expérience</span>
+              {t("Plus de 15 Ans d'", "More than 15 Years of ")}<span className="text-gradient">{t("Expérience", "Experience")}</span>
             </motion.h3>
             
             <motion.p
@@ -196,9 +132,10 @@ export default function ReferencesPage() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg leading-relaxed mb-6"
             >
-              Depuis 2011, EGG a accompagné plus de 1000 projets à travers la Tunisie. 
-              Notre expérience couvre l'ensemble des domaines de la géotechnique et de l'environnement, 
-              des petits projets résidentiels aux grandes infrastructures nationales.
+              {t(
+                "Depuis 2011, EGG a accompagné plus de 1000 projets à travers la Tunisie. Notre expérience couvre l'ensemble des domaines de la géotechnique et de l'environnement, des petits projets résidentiels aux grandes infrastructures nationales.",
+                "Since 2011, EGG has supported more than 1000 projects across Tunisia. Our experience covers every field of geotechnics and the environment, from small residential projects to major national infrastructure."
+              )}
             </motion.p>
             
             <motion.p
@@ -208,9 +145,10 @@ export default function ReferencesPage() {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground text-lg leading-relaxed"
             >
-              Nous avons bâti des relations de confiance durables avec des clients publics et privés, 
-              des promoteurs immobiliers aux institutions gouvernementales, en passant par les bureaux 
-              d'études et les entreprises industrielles.
+              {t(
+                "Nous avons bâti des relations de confiance durables avec des clients publics et privés, des promoteurs immobiliers aux institutions gouvernementales, en passant par les bureaux d'études et les entreprises industrielles.",
+                "We have built lasting trust with public and private clients — from real estate developers to government institutions, engineering firms and industrial companies."
+              )}
             </motion.p>
           </motion.div>
         </div>
@@ -232,7 +170,7 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Nos Partenaires
+              {t("Nos Partenaires", "Our Partners")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -241,10 +179,13 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Ils Nous Font <span className="text-gradient">Confiance</span>
+              {t("Ils Nous Font ", "They ")}<span className="text-gradient">{t("Confiance", "Trust Us")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Des institutions publiques aux entreprises privées, nous accompagnons des clients de tous secteurs.
+              {t(
+                "Des institutions publiques aux entreprises privées, nous accompagnons des clients de tous secteurs.",
+                "From public institutions to private companies, we support clients across every sector."
+              )}
             </p>
           </motion.div>
 
@@ -296,7 +237,7 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Études de Cas
+              {t("Études de Cas", "Case Studies")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -305,10 +246,13 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Projets <span className="text-gradient">Récents</span>
+              {t("Projets ", "Recent ")}<span className="text-gradient">{t("Récents", "Projects")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Un aperçu de nos réalisations les plus récentes à travers la Tunisie.
+              {t(
+                "Un aperçu de nos réalisations les plus récentes à travers la Tunisie.",
+                "An overview of our most recent projects across Tunisia."
+              )}
             </p>
           </motion.div>
 
@@ -389,7 +333,7 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Domaines d'Intervention
+              {t("Domaines d'Intervention", "Areas of Expertise")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -398,10 +342,13 @@ export default function ReferencesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Secteurs <span className="text-gradient">Desservis</span>
+              {t("Secteurs ", "Sectors ")}<span className="text-gradient">{t("Desservis", "Served")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Notre expertise couvre une large gamme de secteurs d'activité.
+              {t(
+                "Notre expertise couvre une large gamme de secteurs d'activité.",
+                "Our expertise covers a wide range of business sectors."
+              )}
             </p>
           </motion.div>
 
@@ -464,10 +411,10 @@ export default function ReferencesPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "1000+", label: "Projets Réalisés" },
-              { value: "100+", label: "Clients Satisfaits" },
-              { value: "24", label: "Gouvernorats Couverts" },
-              { value: "15+", label: "Années d'Expérience" },
+              { value: "1000+", label: t("Projets Réalisés", "Projects Completed") },
+              { value: "100+", label: t("Clients Satisfaits", "Satisfied Clients") },
+              { value: "24", label: t("Gouvernorats Couverts", "Governorates Covered") },
+              { value: "15+", label: t("Années d'Expérience", "Years of Experience") },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

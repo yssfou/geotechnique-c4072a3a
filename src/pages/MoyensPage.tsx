@@ -3,124 +3,68 @@ import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { AnimatedTitle } from "@/components/AnimatedTitle";
 import { Truck, FlaskConical, Users, GraduationCap, Wrench, ShieldCheck, HardHat, ClipboardCheck, Award, HeartHandshake, Target, Shield } from "lucide-react";
-
-const equipements = [
-  {
-    icon: Truck,
-    title: "Parc de Foreuses",
-    count: "6+",
-    description: "Foreuses hydrauliques modernes pour tous types de terrains",
-    details: [
-      "Foreuses rotary pour sondages profonds",
-      "Sondeuses carottières diamantées",
-      "Foreuses à percussion",
-      "Foreuses sur chenilles tout-terrain",
-    ],
-  },
-  {
-    icon: FlaskConical,
-    title: "Laboratoire d'Essais",
-    count: "100%",
-    description: "Laboratoire équipé pour analyses géotechniques complètes",
-    details: [
-      "Essais de mécanique des sols",
-      "Analyses granulométriques",
-      "Essais de cisaillement",
-      "Essais oedométriques",
-    ],
-  },
-  {
-    icon: Wrench,
-    title: "Équipements In-Situ",
-    count: "10+",
-    description: "Matériel de pointe pour essais sur site",
-    details: [
-      "Pressiomètres Ménard",
-      "Pénétromètres statiques CPT",
-      "Pénétromètres dynamiques",
-      "Scissomètres de chantier",
-    ],
-  },
-];
-
-const equipeDetails = [
-  {
-    icon: GraduationCap,
-    title: "Ingénieurs Géotechniciens",
-    count: "3",
-    description: "Experts diplômés en géotechnique et géologie, avec une expérience terrain significative.",
-  },
-  {
-    icon: HardHat,
-    title: "Techniciens de Terrain",
-    count: "2",
-    description: "Équipes formées aux techniques de forage et d'essais, garantissant la qualité des investigations.",
-  },
-  {
-    icon: FlaskConical,
-    title: "Laborantins",
-    count: "3",
-    description: "Spécialistes des essais de laboratoire, assurant la précision des analyses de sol.",
-  },
-];
-
-const equipe = [
-  {
-    icon: Users,
-    title: "Équipe Technique",
-    count: "18",
-    description: "Professionnels qualifiés et expérimentés",
-  },
-  {
-    icon: GraduationCap,
-    title: "Ingénieurs Spécialisés",
-    count: "1",
-    description: "Experts en géotechnique et environnement",
-  },
-];
-
-const qualityProcedures = [
-  {
-    icon: ClipboardCheck,
-    title: "Contrôle Qualité",
-    description: "Chaque étape de nos prestations fait l'objet d'un contrôle qualité rigoureux, de la prise en charge du projet jusqu'à la livraison du rapport final.",
-  },
-  {
-    icon: Shield,
-    title: "Sécurité",
-    description: "La sécurité de nos équipes et des sites d'intervention est une priorité absolue. Nos techniciens sont formés aux règles HSE et équipés d'EPI adaptés.",
-  },
-  {
-    icon: Target,
-    title: "Calibration",
-    description: "Tous nos équipements de mesure sont régulièrement calibrés et entretenus selon les recommandations des fabricants et les normes en vigueur.",
-  },
-  {
-    icon: Award,
-    title: "Formation Continue",
-    description: "Nos équipes bénéficient de formations régulières pour maintenir et développer leurs compétences techniques et leur connaissance des évolutions normatives.",
-  },
-];
-
-const values = [
-  {
-    icon: Target,
-    title: "Précision",
-    description: "Rigueur scientifique dans toutes nos analyses",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Engagement",
-    description: "Respect des délais et des engagements",
-  },
-  {
-    icon: Award,
-    title: "Excellence",
-    description: "Recherche permanente de la qualité",
-  },
-];
+import { useT } from "@/contexts/LanguageContext";
 
 export default function MoyensPage() {
+  const t = useT();
+  const equipements = [
+    {
+      icon: Truck,
+      title: t("Parc de Foreuses", "Drilling Rig Fleet"),
+      count: "6+",
+      description: t("Foreuses hydrauliques modernes pour tous types de terrains", "Modern hydraulic drilling rigs for all terrain types"),
+      details: [
+        t("Foreuses rotary pour sondages profonds", "Rotary rigs for deep boreholes"),
+        t("Sondeuses carottières diamantées", "Diamond core drilling rigs"),
+        t("Foreuses à percussion", "Percussion drilling rigs"),
+        t("Foreuses sur chenilles tout-terrain", "All-terrain tracked rigs"),
+      ],
+    },
+    {
+      icon: FlaskConical,
+      title: t("Laboratoire d'Essais", "Testing Laboratory"),
+      count: "100%",
+      description: t("Laboratoire équipé pour analyses géotechniques complètes", "Laboratory equipped for complete geotechnical analyses"),
+      details: [
+        t("Essais de mécanique des sols", "Soil mechanics tests"),
+        t("Analyses granulométriques", "Particle-size analysis"),
+        t("Essais de cisaillement", "Shear tests"),
+        t("Essais oedométriques", "Oedometer tests"),
+      ],
+    },
+    {
+      icon: Wrench,
+      title: t("Équipements In-Situ", "In-Situ Equipment"),
+      count: "10+",
+      description: t("Matériel de pointe pour essais sur site", "State-of-the-art equipment for on-site testing"),
+      details: [
+        t("Pressiomètres Ménard", "Ménard pressuremeters"),
+        t("Pénétromètres statiques CPT", "CPT static penetrometers"),
+        t("Pénétromètres dynamiques", "Dynamic penetrometers"),
+        t("Scissomètres de chantier", "Field vane testers"),
+      ],
+    },
+  ];
+  const equipeDetails = [
+    { icon: GraduationCap, title: t("Ingénieurs Géotechniciens", "Geotechnical Engineers"), count: "3", description: t("Experts diplômés en géotechnique et géologie, avec une expérience terrain significative.", "Qualified experts in geotechnics and geology with significant field experience.") },
+    { icon: HardHat, title: t("Techniciens de Terrain", "Field Technicians"), count: "2", description: t("Équipes formées aux techniques de forage et d'essais, garantissant la qualité des investigations.", "Teams trained in drilling and testing techniques, ensuring quality investigations.") },
+    { icon: FlaskConical, title: t("Laborantins", "Lab Technicians"), count: "3", description: t("Spécialistes des essais de laboratoire, assurant la précision des analyses de sol.", "Laboratory testing specialists ensuring the accuracy of soil analyses.") },
+  ];
+  const equipe = [
+    { icon: Users, title: t("Équipe Technique", "Technical Team"), count: "18", description: t("Professionnels qualifiés et expérimentés", "Qualified, experienced professionals") },
+    { icon: GraduationCap, title: t("Ingénieurs Spécialisés", "Specialized Engineers"), count: "1", description: t("Experts en géotechnique et environnement", "Experts in geotechnics and environment") },
+  ];
+  const qualityProcedures = [
+    { icon: ClipboardCheck, title: t("Contrôle Qualité", "Quality Control"), description: t("Chaque étape de nos prestations fait l'objet d'un contrôle qualité rigoureux, de la prise en charge du projet jusqu'à la livraison du rapport final.", "Every step of our services undergoes rigorous quality control, from project intake to delivery of the final report.") },
+    { icon: Shield, title: t("Sécurité", "Safety"), description: t("La sécurité de nos équipes et des sites d'intervention est une priorité absolue. Nos techniciens sont formés aux règles HSE et équipés d'EPI adaptés.", "The safety of our teams and worksites is an absolute priority. Our technicians are trained in HSE rules and equipped with appropriate PPE.") },
+    { icon: Target, title: t("Calibration", "Calibration"), description: t("Tous nos équipements de mesure sont régulièrement calibrés et entretenus selon les recommandations des fabricants et les normes en vigueur.", "All measurement equipment is regularly calibrated and maintained per manufacturer recommendations and applicable standards.") },
+    { icon: Award, title: t("Formation Continue", "Continuous Training"), description: t("Nos équipes bénéficient de formations régulières pour maintenir et développer leurs compétences techniques et leur connaissance des évolutions normatives.", "Our teams benefit from regular training to maintain and develop their technical skills and knowledge of evolving standards.") },
+  ];
+  const values = [
+    { icon: Target, title: t("Précision", "Precision"), description: t("Rigueur scientifique dans toutes nos analyses", "Scientific rigor in all our analyses") },
+    { icon: HeartHandshake, title: t("Engagement", "Commitment"), description: t("Respect des délais et des engagements", "Meeting deadlines and commitments") },
+    { icon: Award, title: t("Excellence", "Excellence"), description: t("Recherche permanente de la qualité", "Continuous pursuit of quality") },
+  ];
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -137,10 +81,13 @@ export default function MoyensPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedTitle
-            label="Nos Ressources"
-            title="Moyens Techniques"
-            highlightedWord="Techniques"
-            subtitle="Des équipements modernes et une équipe qualifiée pour garantir la qualité et la précision de nos interventions."
+            label={t("Nos Ressources", "Our Resources")}
+            title={t("Moyens Techniques", "Technical Resources")}
+            highlightedWord={t("Techniques", "Technical")}
+            subtitle={t(
+              "Des équipements modernes et une équipe qualifiée pour garantir la qualité et la précision de nos interventions.",
+              "Modern equipment and a qualified team to guarantee the quality and accuracy of our interventions."
+            )}
           />
         </div>
       </section>
@@ -171,7 +118,7 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 150, delay: 0.1 }}
               className="text-3xl font-bold text-foreground mb-6"
             >
-              Ressources Techniques et <span className="text-gradient">Humaines</span>
+              {t("Ressources Techniques et ", "Technical & ")}<span className="text-gradient">{t("Humaines", "Human Resources")}</span>
             </motion.h3>
             
             <motion.p
@@ -181,9 +128,10 @@ export default function MoyensPage() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg leading-relaxed mb-6"
             >
-              EGG dispose d'un parc matériel moderne et diversifié, entretenu régulièrement pour garantir 
-              la fiabilité des résultats. Notre équipe pluridisciplinaire combine expertise technique 
-              et expérience terrain pour répondre aux exigences les plus élevées.
+              {t(
+                "EGG dispose d'un parc matériel moderne et diversifié, entretenu régulièrement pour garantir la fiabilité des résultats. Notre équipe pluridisciplinaire combine expertise technique et expérience terrain pour répondre aux exigences les plus élevées.",
+                "EGG has a modern, diverse equipment fleet, maintained regularly to ensure reliable results. Our multidisciplinary team combines technical expertise and field experience to meet the highest demands."
+              )}
             </motion.p>
 
             <div className="grid md:grid-cols-3 gap-6 mt-12">
@@ -231,7 +179,7 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Ressources Matérielles
+              {t("Ressources Matérielles", "Material Resources")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -240,10 +188,13 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Équipements de <span className="text-gradient">Pointe</span>
+              {t("Équipements de ", "State-of-the-art ")}<span className="text-gradient">{t("Pointe", "Equipment")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Notre parc matériel moderne nous permet de réaliser tous types de missions géotechniques.
+              {t(
+                "Notre parc matériel moderne nous permet de réaliser tous types de missions géotechniques.",
+                "Our modern equipment fleet lets us carry out every type of geotechnical mission."
+              )}
             </p>
           </motion.div>
 
@@ -338,7 +289,7 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Ressources Humaines
+              {t("Ressources Humaines", "Human Resources")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -347,10 +298,13 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Notre <span className="text-gradient">Équipe</span>
+              {t("Notre ", "Our ")}<span className="text-gradient">{t("Équipe", "Team")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Des professionnels passionnés et qualifiés au service de vos projets.
+              {t(
+                "Des professionnels passionnés et qualifiés au service de vos projets.",
+                "Passionate, qualified professionals serving your projects."
+              )}
             </p>
           </motion.div>
 
@@ -454,7 +408,7 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Assurance Qualité
+              {t("Assurance Qualité", "Quality Assurance")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -463,10 +417,13 @@ export default function MoyensPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Qualité et <span className="text-gradient">Sécurité</span>
+              {t("Qualité et ", "Quality & ")}<span className="text-gradient">{t("Sécurité", "Safety")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Des procédures rigoureuses pour garantir l'excellence de nos prestations.
+              {t(
+                "Des procédures rigoureuses pour garantir l'excellence de nos prestations.",
+                "Rigorous procedures to guarantee the excellence of our services."
+              )}
             </p>
           </motion.div>
 
@@ -519,10 +476,10 @@ export default function MoyensPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "2011", label: "Année de création" },
-              { value: "1000+", label: "Projets réalisés" },
-              { value: "25+", label: "Employés" },
-              { value: "100%", label: "Satisfaction client" },
+              { value: "2011", label: t("Année de création", "Founded") },
+              { value: "1000+", label: t("Projets réalisés", "Projects completed") },
+              { value: "25+", label: t("Employés", "Employees") },
+              { value: "100%", label: t("Satisfaction client", "Client satisfaction") },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
