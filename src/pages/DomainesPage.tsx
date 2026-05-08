@@ -10,88 +10,87 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const domaines = [
-  {
-    icon: Pickaxe,
-    title: "Géotechnique",
-    description: "Études de sol approfondies incluant sondages carottés, essais pressiométriques, pénétrométriques et analyse de la capacité portante des sols pour vos projets de construction.",
-    details: [
-      "Sondages carottés et destructifs",
-      "Essais pressiométriques Ménard",
-      "Essais au pénétromètre statique/dynamique",
-      "Études de fondations",
-      "Reconnaissance géologique",
-    ],
-    definition: "La géotechnique est la science qui étudie les propriétés mécaniques, physiques et hydrauliques des sols et des roches. Elle est essentielle pour dimensionner les fondations et garantir la stabilité des ouvrages.",
-    objectives: "Déterminer la nature et les caractéristiques du sol, évaluer la capacité portante, définir le type de fondations adapté et anticiper les risques de tassement.",
-    risks: "Fondations inadaptées, tassements différentiels, glissements de terrain, effondrements, sinistres structurels coûteux.",
-  },
-  {
-    icon: Mountain,
-    title: "Carrière et Mines",
-    description: "Exploitation de carrières, études géologiques minières, stabilité des talus et gestion des ressources minérales.",
-    details: [
-      "Études géologiques de gisements",
-      "Plans d'exploitation de carrières",
-      "Stabilité des talus et fronts de taille",
-      "Contrôle de tir de mines",
-      "Études d'impact des exploitations minières",
-    ],
-    definition: "L'exploitation des carrières et des mines concerne l'extraction des matériaux et minerais. Elle nécessite des études géologiques approfondies pour optimiser l'exploitation tout en assurant la sécurité.",
-    objectives: "Évaluer les gisements, planifier l'exploitation, assurer la stabilité des ouvrages miniers et minimiser l'impact environnemental.",
-    risks: "Instabilité des talus, éboulements, pollution des sols et des eaux, épuisement des ressources.",
-  },
-  {
-    icon: Leaf,
-    title: "Environnement",
-    description: "Évaluations d'impact environnemental, études de pollution des sols et des eaux, conformité aux réglementations environnementales tunisiennes.",
-    details: [
-      "Études d'impact environnemental (EIE)",
-      "Diagnostic de pollution",
-      "Dépollution des sites",
-      "Audit environnemental",
-      "Suivi de la qualité des eaux",
-    ],
-    definition: "Les études environnementales évaluent les impacts d'un projet sur l'écosystème et proposent des mesures d'atténuation. Elles sont obligatoires pour de nombreux projets en Tunisie.",
-    objectives: "Identifier les impacts potentiels, proposer des mesures de mitigation, assurer la conformité réglementaire et préserver l'environnement.",
-    risks: "Pollution des sols et des eaux, destruction d'habitats, sanctions administratives, refus de permis.",
-  },
-  {
-    icon: HardHat,
-    title: "Travaux Spéciaux",
-    description: "Conception et réalisation de travaux de génie civil spécialisés : fondations profondes, consolidation des sols, drainage et terrassements.",
-    details: [
-      "Micropieux et pieux forés",
-      "Injection de consolidation",
-      "Parois moulées",
-      "Tirants d'ancrage",
-      "Drainage et rabattement",
-    ],
-    definition: "Les travaux spéciaux regroupent les techniques de construction spécialisées pour les fondations profondes, le renforcement des sols et les ouvrages souterrains.",
-    objectives: "Réaliser des fondations adaptées aux sols difficiles, stabiliser les terrains instables et permettre la construction en site contraint.",
-    risks: "Instabilité des ouvrages, désordres sur les constructions voisines, coûts de reprise élevés.",
-  },
-];
-
-const normes = [
-  { code: "DTU 11.1", description: "Sondages des sols de fondation" },
-  { code: "NF P 94-500", description: "Missions géotechniques - Classifications et spécifications" },
-  { code: "EN 1997-1", description: "Eurocode 7 - Calcul géotechnique" },
-  { code: "NF P 94-110", description: "Essai pressiométrique Ménard" },
-  { code: "NFP 94-113", description: "Essai de pénétration statique" },
-];
-
-const typesProjects = [
-  { icon: Building2, title: "Bâtiments", examples: "Immeubles, centres commerciaux, hôpitaux, écoles" },
-  { icon: Factory, title: "Industrie", examples: "Usines, entrepôts, zones industrielles" },
-  { icon: Landmark, title: "Infrastructures", examples: "Routes, ponts, tunnels, barrages" },
-  { icon: Waves, title: "Ouvrages Maritimes", examples: "Ports, digues, quais" },
-  { icon: Mountain, title: "Ouvrages Miniers", examples: "Excavations, carrières, stabilité des talus" },
-  { icon: TreePine, title: "Aménagement", examples: "Lotissements, parcs, espaces verts" },
-];
+import { useT } from "@/contexts/LanguageContext";
 
 export default function DomainesPage() {
+  const t = useT();
+  const domaines = [
+    {
+      icon: Pickaxe,
+      title: t("Géotechnique", "Geotechnics"),
+      description: t("Études de sol approfondies incluant sondages carottés, essais pressiométriques, pénétrométriques et analyse de la capacité portante des sols pour vos projets de construction.", "In-depth soil studies including core drilling, pressuremeter and penetrometer tests and bearing capacity analysis for your construction projects."),
+      details: [
+        t("Sondages carottés et destructifs", "Core and destructive drilling"),
+        t("Essais pressiométriques Ménard", "Ménard pressuremeter tests"),
+        t("Essais au pénétromètre statique/dynamique", "Static / dynamic penetrometer tests"),
+        t("Études de fondations", "Foundation design studies"),
+        t("Reconnaissance géologique", "Geological surveying"),
+      ],
+      definition: t("La géotechnique est la science qui étudie les propriétés mécaniques, physiques et hydrauliques des sols et des roches. Elle est essentielle pour dimensionner les fondations et garantir la stabilité des ouvrages.", "Geotechnics is the science that studies the mechanical, physical and hydraulic properties of soils and rocks. It is essential to size foundations and ensure the stability of structures."),
+      objectives: t("Déterminer la nature et les caractéristiques du sol, évaluer la capacité portante, définir le type de fondations adapté et anticiper les risques de tassement.", "Determine soil nature and characteristics, assess bearing capacity, define the appropriate foundation type and anticipate settlement risks."),
+      risks: t("Fondations inadaptées, tassements différentiels, glissements de terrain, effondrements, sinistres structurels coûteux.", "Inadequate foundations, differential settlements, landslides, collapses, costly structural damage."),
+    },
+    {
+      icon: Mountain,
+      title: t("Carrière et Mines", "Quarries & Mines"),
+      description: t("Exploitation de carrières, études géologiques minières, stabilité des talus et gestion des ressources minérales.", "Quarry operation, mining geological studies, slope stability and management of mineral resources."),
+      details: [
+        t("Études géologiques de gisements", "Geological studies of deposits"),
+        t("Plans d'exploitation de carrières", "Quarry operation plans"),
+        t("Stabilité des talus et fronts de taille", "Slope and quarry-face stability"),
+        t("Contrôle de tir de mines", "Blasting control"),
+        t("Études d'impact des exploitations minières", "Mining operation impact studies"),
+      ],
+      definition: t("L'exploitation des carrières et des mines concerne l'extraction des matériaux et minerais. Elle nécessite des études géologiques approfondies pour optimiser l'exploitation tout en assurant la sécurité.", "Quarry and mine operation involves the extraction of materials and ores. It requires in-depth geological studies to optimize operation while ensuring safety."),
+      objectives: t("Évaluer les gisements, planifier l'exploitation, assurer la stabilité des ouvrages miniers et minimiser l'impact environnemental.", "Assess deposits, plan operation, ensure mining structure stability and minimize environmental impact."),
+      risks: t("Instabilité des talus, éboulements, pollution des sols et des eaux, épuisement des ressources.", "Slope instability, rockfalls, soil and water pollution, resource depletion."),
+    },
+    {
+      icon: Leaf,
+      title: t("Environnement", "Environment"),
+      description: t("Évaluations d'impact environnemental, études de pollution des sols et des eaux, conformité aux réglementations environnementales tunisiennes.", "Environmental impact assessments, soil and water pollution studies, compliance with Tunisian environmental regulations."),
+      details: [
+        t("Études d'impact environnemental (EIE)", "Environmental Impact Assessments (EIA)"),
+        t("Diagnostic de pollution", "Pollution diagnostics"),
+        t("Dépollution des sites", "Site remediation"),
+        t("Audit environnemental", "Environmental audit"),
+        t("Suivi de la qualité des eaux", "Water quality monitoring"),
+      ],
+      definition: t("Les études environnementales évaluent les impacts d'un projet sur l'écosystème et proposent des mesures d'atténuation. Elles sont obligatoires pour de nombreux projets en Tunisie.", "Environmental studies assess a project's impacts on the ecosystem and propose mitigation measures. They are mandatory for many projects in Tunisia."),
+      objectives: t("Identifier les impacts potentiels, proposer des mesures de mitigation, assurer la conformité réglementaire et préserver l'environnement.", "Identify potential impacts, propose mitigation measures, ensure regulatory compliance and protect the environment."),
+      risks: t("Pollution des sols et des eaux, destruction d'habitats, sanctions administratives, refus de permis.", "Soil and water pollution, habitat destruction, administrative penalties, permit refusals."),
+    },
+    {
+      icon: HardHat,
+      title: t("Travaux Spéciaux", "Special Works"),
+      description: t("Conception et réalisation de travaux de génie civil spécialisés : fondations profondes, consolidation des sols, drainage et terrassements.", "Design and execution of specialized civil works: deep foundations, soil consolidation, drainage and earthworks."),
+      details: [
+        t("Micropieux et pieux forés", "Micropiles and bored piles"),
+        t("Injection de consolidation", "Consolidation grouting"),
+        t("Parois moulées", "Diaphragm walls"),
+        t("Tirants d'ancrage", "Ground anchors"),
+        t("Drainage et rabattement", "Drainage and dewatering"),
+      ],
+      definition: t("Les travaux spéciaux regroupent les techniques de construction spécialisées pour les fondations profondes, le renforcement des sols et les ouvrages souterrains.", "Special works cover specialized construction techniques for deep foundations, soil reinforcement and underground structures."),
+      objectives: t("Réaliser des fondations adaptées aux sols difficiles, stabiliser les terrains instables et permettre la construction en site contraint.", "Build foundations suited to difficult soils, stabilize unstable ground and enable construction on constrained sites."),
+      risks: t("Instabilité des ouvrages, désordres sur les constructions voisines, coûts de reprise élevés.", "Structural instability, damage to neighboring buildings, high remediation costs."),
+    },
+  ];
+  const normes = [
+    { code: "DTU 11.1", description: t("Sondages des sols de fondation", "Foundation soil drilling") },
+    { code: "NF P 94-500", description: t("Missions géotechniques - Classifications et spécifications", "Geotechnical missions - Classifications and specifications") },
+    { code: "EN 1997-1", description: t("Eurocode 7 - Calcul géotechnique", "Eurocode 7 - Geotechnical design") },
+    { code: "NF P 94-110", description: t("Essai pressiométrique Ménard", "Ménard pressuremeter test") },
+    { code: "NFP 94-113", description: t("Essai de pénétration statique", "Static penetration test") },
+  ];
+  const typesProjects = [
+    { icon: Building2, title: t("Bâtiments", "Buildings"), examples: t("Immeubles, centres commerciaux, hôpitaux, écoles", "Apartment buildings, malls, hospitals, schools") },
+    { icon: Factory, title: t("Industrie", "Industry"), examples: t("Usines, entrepôts, zones industrielles", "Factories, warehouses, industrial zones") },
+    { icon: Landmark, title: t("Infrastructures", "Infrastructure"), examples: t("Routes, ponts, tunnels, barrages", "Roads, bridges, tunnels, dams") },
+    { icon: Waves, title: t("Ouvrages Maritimes", "Maritime Works"), examples: t("Ports, digues, quais", "Ports, breakwaters, quays") },
+    { icon: Mountain, title: t("Ouvrages Miniers", "Mining Works"), examples: t("Excavations, carrières, stabilité des talus", "Excavations, quarries, slope stability") },
+    { icon: TreePine, title: t("Aménagement", "Land Development"), examples: t("Lotissements, parcs, espaces verts", "Subdivisions, parks, green spaces") },
+  ];
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -108,10 +107,13 @@ export default function DomainesPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedTitle
-            label="Notre Expertise"
-            title="Domaines d'Activités"
-            highlightedWord="Activités"
-            subtitle="Découvrez les différents domaines dans lesquels EGG excelle depuis plus de 15 ans d'expérience en Tunisie."
+            label={t("Notre Expertise", "Our Expertise")}
+            title={t("Domaines d'Activités", "Areas of Activity")}
+            highlightedWord={t("Activités", "Activity")}
+            subtitle={t(
+              "Découvrez les différents domaines dans lesquels EGG excelle depuis plus de 15 ans d'expérience en Tunisie.",
+              "Discover the different areas in which EGG has excelled for more than 15 years of experience in Tunisia."
+            )}
           />
         </div>
       </section>
@@ -152,7 +154,7 @@ export default function DomainesPage() {
               transition={{ type: "spring", stiffness: 150, delay: 0.1 }}
               className="text-3xl font-bold text-foreground mb-6"
             >
-              L'Importance des Études <span className="text-gradient">Géotechniques</span>
+              {t("L'Importance des Études ", "The Importance of ")}<span className="text-gradient">{t("Géotechniques", "Geotechnical Studies")}</span>
             </motion.h3>
             
             <motion.p
@@ -162,10 +164,10 @@ export default function DomainesPage() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg leading-relaxed mb-6"
             >
-              Avant tout projet de construction, une étude géotechnique approfondie est indispensable. 
-              Elle permet de caractériser le sol, d'anticiper les risques et de dimensionner correctement 
-              les fondations. Sans cette analyse préalable, les risques de sinistres, de tassements 
-              différentiels ou de désordres structurels sont considérablement accrus.
+              {t(
+                "Avant tout projet de construction, une étude géotechnique approfondie est indispensable. Elle permet de caractériser le sol, d'anticiper les risques et de dimensionner correctement les fondations. Sans cette analyse préalable, les risques de sinistres, de tassements différentiels ou de désordres structurels sont considérablement accrus.",
+                "Before any construction project, a thorough geotechnical study is essential. It characterizes the soil, anticipates risks and properly sizes foundations. Without this prior analysis, the risk of damage, differential settlement and structural disorders is significantly increased."
+              )}
             </motion.p>
             
             <motion.p
@@ -175,9 +177,10 @@ export default function DomainesPage() {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground text-lg leading-relaxed"
             >
-              De même, les études environnementales sont essentielles pour 
-              garantir la durabilité des projets et leur conformité aux réglementations en vigueur 
-              en Tunisie et à l'international.
+              {t(
+                "De même, les études environnementales sont essentielles pour garantir la durabilité des projets et leur conformité aux réglementations en vigueur en Tunisie et à l'international.",
+                "Likewise, environmental studies are essential to ensure project sustainability and compliance with regulations in force in Tunisia and internationally."
+              )}
             </motion.p>
           </motion.div>
         </div>
@@ -199,7 +202,7 @@ export default function DomainesPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Nos Compétences
+              {t("Nos Compétences", "Our Skills")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -208,7 +211,7 @@ export default function DomainesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Détail des <span className="text-gradient">Domaines</span>
+              {t("Détail des ", "Domain ")}<span className="text-gradient">{t("Domaines", "Details")}</span>
             </motion.h3>
           </motion.div>
 
@@ -265,7 +268,7 @@ export default function DomainesPage() {
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="definition" className="border-border/30">
                         <AccordionTrigger className="text-foreground hover:text-primary">
-                          Définition
+                          {t("Définition", "Definition")}
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground">
                           {domaine.definition}
@@ -274,7 +277,7 @@ export default function DomainesPage() {
                       
                       <AccordionItem value="objectives" className="border-border/30">
                         <AccordionTrigger className="text-foreground hover:text-primary">
-                          Objectifs
+                          {t("Objectifs", "Objectives")}
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground">
                           {domaine.objectives}
@@ -283,7 +286,7 @@ export default function DomainesPage() {
                       
                       <AccordionItem value="risks" className="border-border/30">
                         <AccordionTrigger className="text-foreground hover:text-primary">
-                          Risques Évités
+                          {t("Risques Évités", "Risks Avoided")}
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground">
                           {domaine.risks}
@@ -334,10 +337,13 @@ export default function DomainesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Normes et <span className="text-gradient">Référentiels</span>
+              {t("Normes et ", "Standards & ")}<span className="text-gradient">{t("Référentiels", "References")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Nos études sont réalisées conformément aux normes françaises, européennes et tunisiennes en vigueur.
+              {t(
+                "Nos études sont réalisées conformément aux normes françaises, européennes et tunisiennes en vigueur.",
+                "Our studies are carried out in accordance with the French, European and Tunisian standards in force."
+              )}
             </p>
           </motion.div>
 
@@ -376,7 +382,7 @@ export default function DomainesPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Applications
+              {t("Applications", "Applications")}
             </motion.span>
             <motion.h3
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -385,10 +391,13 @@ export default function DomainesPage() {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Types de <span className="text-gradient">Projets</span>
+              {t("Types de ", "Types of ")}<span className="text-gradient">{t("Projets", "Projects")}</span>
             </motion.h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Notre expertise couvre une large gamme de projets dans différents secteurs d'activité.
+              {t(
+                "Notre expertise couvre une large gamme de projets dans différents secteurs d'activité.",
+                "Our expertise covers a wide range of projects across different business sectors."
+              )}
             </p>
           </motion.div>
 
@@ -445,10 +454,13 @@ export default function DomainesPage() {
             transition={{ delay: 0.3 }}
           >
             <h3 className="text-3xl font-bold text-primary-foreground mb-4">
-              Besoin d'une étude géotechnique ?
+              {t("Besoin d'une étude géotechnique ?", "Need a geotechnical study?")}
             </h3>
             <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.
+              {t(
+                "Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.",
+                "Contact us to discuss your project and get a personalized quote."
+              )}
             </p>
             <Link to="/services">
               <motion.button
@@ -456,7 +468,7 @@ export default function DomainesPage() {
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 rounded-full text-lg font-medium hover:shadow-glow transition-all"
               >
-                Voir nos Services
+                {t("Voir nos Services", "View our Services")}
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>
