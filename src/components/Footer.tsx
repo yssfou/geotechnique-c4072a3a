@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoEggFooter from "@/assets/logo-egg-footer.png";
+import { useT } from "@/contexts/LanguageContext";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useT();
 
   return (
     <footer className="bg-card border-t border-border/30">
@@ -22,9 +24,10 @@ export function Footer() {
               <img src={logoEggFooter} alt="EGG" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-              Entreprises Géologiques et Géotechniques - Votre partenaire de
-              confiance pour tous vos projets de sondages, forages et études
-              environnementales en Tunisie.
+              {t(
+                "Entreprises Géologiques et Géotechniques - Votre partenaire de confiance pour tous vos projets de sondages, forages et études environnementales en Tunisie.",
+                "Geological & Geotechnical Enterprises - Your trusted partner for all your drilling, boring and environmental study projects in Tunisia."
+              )}
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -60,16 +63,16 @@ export function Footer() {
             transition={{ delay: 0.1 }}
           >
             <h4 className="text-lg font-semibold text-foreground mb-6">
-              Liens Rapides
+              {t("Liens Rapides", "Quick Links")}
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Accueil", href: "/" },
-                { label: "Domaines", href: "/domaines" },
-                { label: "Services", href: "/services" },
-                { label: "Moyens", href: "/moyens" },
-                { label: "Références", href: "/references" },
-                { label: "Contact", href: "/contact" },
+                { label: t("Accueil", "Home"), href: "/" },
+                { label: t("Domaines", "Domains"), href: "/domaines" },
+                { label: t("Services", "Services"), href: "/services" },
+                { label: t("Moyens", "Resources"), href: "/moyens" },
+                { label: t("Références", "References"), href: "/references" },
+                { label: t("Contact", "Contact"), href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -91,13 +94,13 @@ export function Footer() {
             transition={{ delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold text-foreground mb-6">
-              Nos Services
+              {t("Nos Services", "Our Services")}
             </h4>
             <ul className="space-y-3">
               {[
-                "Sondages Géotechniques",
-                "Études Environnementales",
-                "Travaux Spéciaux",
+                t("Sondages Géotechniques", "Geotechnical Drilling"),
+                t("Études Environnementales", "Environmental Studies"),
+                t("Travaux Spéciaux", "Special Works"),
               ].map((service) => (
                 <li key={service}>
                   <Link
@@ -121,18 +124,20 @@ export function Footer() {
           className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            © {currentYear} EGG - Entreprises Géologiques et Géotechniques. Tous
-            droits réservés.
+            © {currentYear} EGG - {t(
+              "Entreprises Géologiques et Géotechniques. Tous droits réservés.",
+              "Geological & Geotechnical Enterprises. All rights reserved."
+            )}
           </p>
           <p className="text-sm text-muted-foreground">
-            La Gazelle, Ariana, Tunisie
+            {t("La Gazelle, Ariana, Tunisie", "La Gazelle, Ariana, Tunisia")}
           </p>
         </motion.div>
         
         {/* Creator Credit */}
         <div className="mt-4 text-right">
           <p className="text-xs text-muted-foreground/60">
-            Created by Ourabi Youssef
+            {t("Créé par Ourabi Youssef", "Created by Ourabi Youssef")}
           </p>
         </div>
       </div>

@@ -1,21 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Award, Users, Target } from "lucide-react";
-const features = [{
-  icon: Award,
-  title: "Expertise Reconnue",
-  description: "Depuis 2011, nous accompagnons vos projets géotechniques en Tunisie."
-}, {
-  icon: Users,
-  title: "Équipe Qualifiée",
-  description: "Ingénieurs et techniciens hautement qualifiés et certifiés."
-}, {
-  icon: Target,
-  title: "Précision Garantie",
-  description: "Équipements de pointe pour des résultats fiables et précis."
-}];
-const highlights = ["Études géotechniques complètes", "Forages et sondages de reconnaissance", "Essais in-situ et en laboratoire", "Rapports techniques détaillés", "Conseil et assistance technique", "Respect des normes internationales"];
+import { useT } from "@/contexts/LanguageContext";
 export function AboutSection() {
+  const t = useT();
+  const features = [{
+    icon: Award,
+    title: t("Expertise Reconnue", "Recognized Expertise"),
+    description: t("Depuis 2011, nous accompagnons vos projets géotechniques en Tunisie.", "Since 2011, we have supported geotechnical projects across Tunisia.")
+  }, {
+    icon: Users,
+    title: t("Équipe Qualifiée", "Qualified Team"),
+    description: t("Ingénieurs et techniciens hautement qualifiés et certifiés.", "Highly qualified and certified engineers and technicians.")
+  }, {
+    icon: Target,
+    title: t("Précision Garantie", "Guaranteed Precision"),
+    description: t("Équipements de pointe pour des résultats fiables et précis.", "State-of-the-art equipment for reliable and accurate results.")
+  }];
+  const highlights = [
+    t("Études géotechniques complètes", "Complete geotechnical studies"),
+    t("Forages et sondages de reconnaissance", "Drilling and exploratory boreholes"),
+    t("Essais in-situ et en laboratoire", "In-situ and laboratory testing"),
+    t("Rapports techniques détaillés", "Detailed technical reports"),
+    t("Conseil et assistance technique", "Technical advice and assistance"),
+    t("Respect des normes internationales", "Compliance with international standards"),
+  ];
   return <section id="apropos" className="py-24 bg-card relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -40,18 +49,21 @@ export function AboutSection() {
           duration: 0.7
         }}>
             <span className="text-sm font-medium text-primary uppercase tracking-widest">
-              À Propos de Nous
+              {t("À Propos de Nous", "About Us")}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Votre Partenaire en{" "}
-              <span className="text-gradient">Géotechnique</span>
+              {t("Votre Partenaire en ", "Your Partner in ")}
+              <span className="text-gradient">{t("Géotechnique", "Geotechnics")}</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              <strong className="text-foreground">EGG</strong> - Entreprises
-              Géologiques et Géotechniques est une société tunisienne spécialisée
-              dans les études de sol, les forages et les travaux spéciaux. Depuis
-              <strong className="text-primary"> 2011</strong>, nous avons accompagné des centaines de projets de
-              construction et d'infrastructure à travers le pays.
+              <strong className="text-foreground">EGG</strong> - {t(
+                "Entreprises Géologiques et Géotechniques est une société tunisienne spécialisée dans les études de sol, les forages et les travaux spéciaux. Depuis ",
+                "Geological & Geotechnical Enterprises is a Tunisian company specialized in soil studies, drilling and special works. Since "
+              )}
+              <strong className="text-primary">2011</strong>{t(
+                ", nous avons accompagné des centaines de projets de construction et d'infrastructure à travers le pays.",
+                ", we have supported hundreds of construction and infrastructure projects across the country."
+              )}
             </p>
 
             {/* Highlights List */}
@@ -85,7 +97,7 @@ export function AboutSection() {
           }} whileTap={{
             scale: 0.95
           }} className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-glow">
-              Demander un Devis
+              {t("Demander un Devis", "Request a Quote")}
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -148,12 +160,12 @@ export function AboutSection() {
                   <div className="text-3xl font-bold text-primary-foreground">
                     2011
                   </div>
-                  <div className="text-sm text-primary-foreground/80">Depuis</div>
+                  <div className="text-sm text-primary-foreground/80">{t("Depuis", "Since")}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary-foreground">1000+</div>
                   <div className="text-sm text-primary-foreground/80">
-                    Projets
+                    {t("Projets", "Projects")}
                   </div>
                 </div>
                 <div>
@@ -161,7 +173,7 @@ export function AboutSection() {
                     100%
                   </div>
                   <div className="text-sm text-primary-foreground/80">
-                    Satisfaction
+                    {t("Satisfaction", "Satisfaction")}
                   </div>
                 </div>
               </div>

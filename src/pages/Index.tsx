@@ -6,72 +6,34 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Pickaxe, Leaf, HardHat, Mountain, CheckCircle, Target, FileSearch, FileText, Phone, Building2, Factory, Landmark, Home } from "lucide-react";
 import { ClientsSection } from "@/components/ClientsSection";
-
-const domaines = [
-  {
-    icon: Pickaxe,
-    title: "Géotechnique",
-    description: "Études de sol, sondages carottés et essais in-situ pour vos projets de construction.",
-    href: "/domaines",
-  },
-  {
-    icon: Mountain,
-    title: "Carrière et Mines",
-    description: "Exploitation de carrières, études géologiques minières et stabilité des talus.",
-    href: "/domaines",
-  },
-  {
-    icon: Leaf,
-    title: "Environnement",
-    description: "Études d'impact environnemental et diagnostic de pollution.",
-    href: "/domaines",
-  },
-  {
-    icon: HardHat,
-    title: "Travaux Spéciaux",
-    description: "Fondations profondes, consolidation des sols et injections.",
-    href: "/domaines",
-  },
-];
-
-const methodologie = [
-  {
-    icon: Target,
-    step: "01",
-    title: "Analyse des Besoins",
-    description: "Étude approfondie de votre projet et définition des objectifs techniques.",
-  },
-  {
-    icon: FileSearch,
-    step: "02",
-    title: "Investigation Terrain",
-    description: "Réalisation des sondages, essais in-situ et prélèvements d'échantillons.",
-  },
-  {
-    icon: FileText,
-    step: "03",
-    title: "Analyse & Rapport",
-    description: "Interprétation des résultats et rédaction du rapport géotechnique détaillé.",
-  },
-];
-
-const avantages = [
-  "Plus de 15 ans d'expérience en Tunisie",
-  "Équipe d'ingénieurs spécialisés certifiés",
-  "Équipements modernes et calibrés",
-  "Respect des normes internationales",
-  "Délais de livraison optimisés",
-  "Couverture nationale complète",
-];
-
-const secteurs = [
-  { icon: Building2, label: "Bâtiments" },
-  { icon: Factory, label: "Industrie" },
-  { icon: Landmark, label: "Infrastructures" },
-  
-];
+import { useT } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const t = useT();
+  const domaines = [
+    { icon: Pickaxe, title: t("Géotechnique", "Geotechnics"), description: t("Études de sol, sondages carottés et essais in-situ pour vos projets de construction.", "Soil studies, core drilling and in-situ testing for your construction projects."), href: "/domaines" },
+    { icon: Mountain, title: t("Carrière et Mines", "Quarries & Mines"), description: t("Exploitation de carrières, études géologiques minières et stabilité des talus.", "Quarry operation, mining geological studies and slope stability."), href: "/domaines" },
+    { icon: Leaf, title: t("Environnement", "Environment"), description: t("Études d'impact environnemental et diagnostic de pollution.", "Environmental impact studies and pollution diagnostics."), href: "/domaines" },
+    { icon: HardHat, title: t("Travaux Spéciaux", "Special Works"), description: t("Fondations profondes, consolidation des sols et injections.", "Deep foundations, soil consolidation and grouting."), href: "/domaines" },
+  ];
+  const methodologie = [
+    { icon: Target, step: "01", title: t("Analyse des Besoins", "Needs Analysis"), description: t("Étude approfondie de votre projet et définition des objectifs techniques.", "In-depth study of your project and definition of technical objectives.") },
+    { icon: FileSearch, step: "02", title: t("Investigation Terrain", "Field Investigation"), description: t("Réalisation des sondages, essais in-situ et prélèvements d'échantillons.", "Drilling, in-situ tests and sample collection.") },
+    { icon: FileText, step: "03", title: t("Analyse & Rapport", "Analysis & Report"), description: t("Interprétation des résultats et rédaction du rapport géotechnique détaillé.", "Interpretation of results and drafting of the detailed geotechnical report.") },
+  ];
+  const avantages = [
+    t("Plus de 15 ans d'expérience en Tunisie", "Over 15 years of experience in Tunisia"),
+    t("Équipe d'ingénieurs spécialisés certifiés", "Team of certified specialized engineers"),
+    t("Équipements modernes et calibrés", "Modern, calibrated equipment"),
+    t("Respect des normes internationales", "Compliance with international standards"),
+    t("Délais de livraison optimisés", "Optimized delivery times"),
+    t("Couverture nationale complète", "Full national coverage"),
+  ];
+  const secteurs = [
+    { icon: Building2, label: t("Bâtiments", "Buildings") },
+    { icon: Factory, label: t("Industrie", "Industry") },
+    { icon: Landmark, label: t("Infrastructures", "Infrastructure") },
+  ];
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -104,7 +66,7 @@ const Index = () => {
                 transition={{ type: "spring", stiffness: 200 }}
                 className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
               >
-                À Propos de Nous
+                {t("À Propos de Nous", "About Us")}
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -113,7 +75,7 @@ const Index = () => {
                 transition={{ type: "spring", stiffness: 150, damping: 15 }}
                 className="text-4xl md:text-5xl font-bold mb-6"
               >
-                Votre Partenaire <span className="text-gradient">Géotechnique</span>
+                {t("Votre Partenaire ", "Your ")}<span className="text-gradient">{t("Géotechnique", "Geotechnical")}</span>{t("", " Partner")}
               </motion.h2>
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -129,8 +91,10 @@ const Index = () => {
                 transition={{ delay: 0.3 }}
                 className="text-muted-foreground text-lg leading-relaxed mb-6"
               >
-                L'Entreprise Géologique et Géotechnique (EGG) est un bureau d'études spécialisé fondé en 2011. 
-                Notre expertise couvre l'ensemble des domaines de la géotechnique et de l'environnement.
+                {t(
+                  "L'Entreprise Géologique et Géotechnique (EGG) est un bureau d'études spécialisé fondé en 2011. Notre expertise couvre l'ensemble des domaines de la géotechnique et de l'environnement.",
+                  "Geological & Geotechnical Enterprise (EGG) is a specialized engineering firm founded in 2011. Our expertise covers every field of geotechnics and the environment."
+                )}
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -139,8 +103,10 @@ const Index = () => {
                 transition={{ delay: 0.4 }}
                 className="text-muted-foreground text-lg leading-relaxed"
               >
-                Nous accompagnons les maîtres d'ouvrage, architectes et bureaux d'études dans la réalisation de leurs 
-                projets en fournissant des études géotechniques fiables et conformes aux normes en vigueur.
+                {t(
+                  "Nous accompagnons les maîtres d'ouvrage, architectes et bureaux d'études dans la réalisation de leurs projets en fournissant des études géotechniques fiables et conformes aux normes en vigueur.",
+                  "We support project owners, architects and engineering firms by providing reliable geotechnical studies that comply with current standards."
+                )}
               </motion.p>
             </motion.div>
 
@@ -204,17 +170,17 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 150 }}
               className="text-3xl font-bold text-primary-foreground mb-2"
             >
-              Chiffres Clés
+              {t("Chiffres Clés", "Key Figures")}
             </motion.h3>
-            <p className="text-primary-foreground/80">Notre engagement en chiffres</p>
+            <p className="text-primary-foreground/80">{t("Notre engagement en chiffres", "Our commitment in numbers")}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "2011", label: "Année de création" },
-              { value: "1000+", label: "Projets réalisés" },
-              { value: "24", label: "Gouvernorats couverts" },
-              { value: "100%", label: "Satisfaction client" },
+              { value: "2011", label: t("Année de création", "Founded") },
+              { value: "1000+", label: t("Projets réalisés", "Projects completed") },
+              { value: "24", label: t("Gouvernorats couverts", "Governorates covered") },
+              { value: "100%", label: t("Satisfaction client", "Client satisfaction") },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -257,7 +223,7 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Notre Expertise
+              {t("Notre Expertise", "Our Expertise")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -266,7 +232,7 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Domaines d'<span className="text-gradient">Intervention</span>
+              {t("Domaines d'", "Areas of ")}<span className="text-gradient">{t("Intervention", "Expertise")}</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -282,7 +248,7 @@ const Index = () => {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground text-lg max-w-2xl mx-auto"
             >
-              Une expertise complète pour répondre à tous vos besoins en études de sol et environnement.
+              {t("Une expertise complète pour répondre à tous vos besoins en études de sol et environnement.", "Comprehensive expertise to meet all your soil study and environmental needs.")}
             </motion.p>
           </motion.div>
 
@@ -314,7 +280,7 @@ const Index = () => {
                     {domaine.description}
                   </p>
                   <div className="flex items-center text-sm text-primary font-medium">
-                    En savoir plus
+                    {t("En savoir plus", "Learn more")}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </motion.div>
@@ -350,7 +316,7 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Notre Processus
+              {t("Notre Processus", "Our Process")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -359,7 +325,7 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Méthodologie de <span className="text-gradient">Travail</span>
+              {t("Méthodologie de ", "Our ")}<span className="text-gradient">{t("Travail", "Methodology")}</span>
             </motion.h2>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -375,7 +341,7 @@ const Index = () => {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground text-lg max-w-2xl mx-auto"
             >
-              Une approche rigoureuse garantissant la qualité et la fiabilité de nos études.
+              {t("Une approche rigoureuse garantissant la qualité et la fiabilité de nos études.", "A rigorous approach guaranteeing the quality and reliability of our studies.")}
             </motion.p>
           </motion.div>
 
@@ -441,7 +407,7 @@ const Index = () => {
                 transition={{ type: "spring", stiffness: 200 }}
                 className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
               >
-                Nos Atouts
+                {t("Nos Atouts", "Our Strengths")}
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -450,7 +416,7 @@ const Index = () => {
                 transition={{ type: "spring", stiffness: 150, damping: 15 }}
                 className="text-4xl md:text-5xl font-bold mb-6"
               >
-                Pourquoi <span className="text-gradient">Nous Choisir</span>
+                {t("Pourquoi ", "Why ")}<span className="text-gradient">{t("Nous Choisir", "Choose Us")}</span>
               </motion.h2>
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -466,9 +432,10 @@ const Index = () => {
                 transition={{ delay: 0.3 }}
                 className="text-muted-foreground text-lg leading-relaxed"
               >
-                EGG se distingue par son engagement envers la qualité, la rigueur scientifique 
-                et la satisfaction client. Notre équipe d'experts met tout en œuvre pour 
-                garantir le succès de vos projets.
+                {t(
+                  "EGG se distingue par son engagement envers la qualité, la rigueur scientifique et la satisfaction client. Notre équipe d'experts met tout en œuvre pour garantir le succès de vos projets.",
+                  "EGG stands out for its commitment to quality, scientific rigor and client satisfaction. Our team of experts does everything to ensure the success of your projects."
+                )}
               </motion.p>
             </motion.div>
 
@@ -535,7 +502,7 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-4"
             >
-              Prêt à Démarrer ?
+              {t("Prêt à Démarrer ?", "Ready to Start?")}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -544,7 +511,7 @@ const Index = () => {
               transition={{ type: "spring", stiffness: 150, damping: 15 }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Lancez Votre <span className="text-gradient">Projet</span>
+              {t("Lancez Votre ", "Launch Your ")}<span className="text-gradient">{t("Projet", "Project")}</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -553,8 +520,10 @@ const Index = () => {
               transition={{ delay: 0.3 }}
               className="text-muted-foreground text-lg mb-8"
             >
-              Contactez-nous dès aujourd'hui pour discuter de vos besoins en études géotechniques. 
-              Notre équipe est à votre disposition pour vous accompagner dans votre projet.
+              {t(
+                "Contactez-nous dès aujourd'hui pour discuter de vos besoins en études géotechniques. Notre équipe est à votre disposition pour vous accompagner dans votre projet.",
+                "Contact us today to discuss your geotechnical study needs. Our team is at your disposal to support your project."
+              )}
             </motion.p>
             
             <motion.div
@@ -571,7 +540,7 @@ const Index = () => {
                   className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-medium hover:shadow-glow transition-all"
                 >
                   <Phone className="w-5 h-5" />
-                  Contactez-Nous
+                  {t("Contactez-Nous", "Contact Us")}
                 </motion.button>
               </Link>
               <Link to="/services">
@@ -580,7 +549,7 @@ const Index = () => {
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-3 bg-background/10 backdrop-blur-sm text-foreground px-8 py-4 rounded-full text-lg font-medium border border-border/50 hover:bg-background/20 transition-all"
                 >
-                  Découvrir Nos Services
+                  {t("Découvrir Nos Services", "Discover Our Services")}
                   <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </Link>

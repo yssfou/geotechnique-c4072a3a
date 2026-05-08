@@ -3,48 +3,52 @@ import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { AnimatedTitle } from "@/components/AnimatedTitle";
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Téléphone",
-    items: [
-      { label: "Mobile", value: "+216 97 446 899", href: "tel:+21697446899" },
-      { label: "Tel/Fax", value: "+216 71 762 924", href: "tel:+21671762924" },
-    ],
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    items: [
-      {
-        value: "egg.brahim@gmail.com",
-        href: "https://mail.google.com/mail/?view=cm&fs=1&to=egg.brahim@gmail.com&su=Demande%20de%20renseignements%20-%20EGG",
-      },
-    ],
-  },
-  {
-    icon: MapPin,
-    title: "Adresse",
-    items: [
-      {
-        value: "Local 1, Impasse Amine Rayhani",
-        subValue: "Cité La Gazelle, Ariana 2083, Tunisie",
-        href: "https://www.google.com/maps/place/entreprise+g%C3%A9ologique+et+g%C3%A9otechnique/@36.8927992,10.16759,909m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12e2cd34810a7915:0x3a3d847689aa15b6!8m2!3d36.8927992!4d10.16759!16s%2Fg%2F11t85hw6l7?entry=ttu",
-      },
-    ],
-  },
-  {
-    icon: Clock,
-    title: "Horaires",
-    items: [
-      { value: "Lundi - Vendredi: 8h00 - 17h00" },
-      { value: "Samedi: 8h00 - 12h00" },
-    ],
-  },
-];
+import { useT } from "@/contexts/LanguageContext";
 
 export default function ContactPage() {
+  const t = useT();
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: t("Téléphone", "Phone"),
+      items: [
+        { label: t("Mobile", "Mobile"), value: "+216 97 446 899", href: "tel:+21697446899", subValue: undefined as string | undefined },
+        { label: "Tel/Fax", value: "+216 71 762 924", href: "tel:+21671762924", subValue: undefined as string | undefined },
+      ],
+    },
+    {
+      icon: Mail,
+      title: t("Email", "Email"),
+      items: [
+        {
+          label: undefined as string | undefined,
+          value: "egg.brahim@gmail.com",
+          href: "https://mail.google.com/mail/?view=cm&fs=1&to=egg.brahim@gmail.com&su=Demande%20de%20renseignements%20-%20EGG",
+          subValue: undefined as string | undefined,
+        },
+      ],
+    },
+    {
+      icon: MapPin,
+      title: t("Adresse", "Address"),
+      items: [
+        {
+          label: undefined as string | undefined,
+          value: t("Local 1, Impasse Amine Rayhani", "Office 1, Impasse Amine Rayhani"),
+          subValue: t("Cité La Gazelle, Ariana 2083, Tunisie", "Cité La Gazelle, Ariana 2083, Tunisia"),
+          href: "https://www.google.com/maps/place/entreprise+g%C3%A9ologique+et+g%C3%A9otechnique/@36.8927992,10.16759,909m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12e2cd34810a7915:0x3a3d847689aa15b6!8m2!3d36.8927992!4d10.16759!16s%2Fg%2F11t85hw6l7?entry=ttu",
+        },
+      ],
+    },
+    {
+      icon: Clock,
+      title: t("Horaires", "Opening Hours"),
+      items: [
+        { label: undefined as string | undefined, value: t("Lundi - Vendredi: 8h00 - 17h00", "Monday – Friday: 8:00 AM – 5:00 PM"), href: undefined as string | undefined, subValue: undefined as string | undefined },
+        { label: undefined as string | undefined, value: t("Samedi: 8h00 - 12h00", "Saturday: 8:00 AM – 12:00 PM"), href: undefined as string | undefined, subValue: undefined as string | undefined },
+      ],
+    },
+  ];
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -61,10 +65,13 @@ export default function ContactPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <AnimatedTitle
-            label="Parlons de votre projet"
-            title="Contactez-Nous"
-            highlightedWord="Contactez"
-            subtitle="Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets géotechniques."
+            label={t("Parlons de votre projet", "Let's talk about your project")}
+            title={t("Contactez-Nous", "Contact Us")}
+            highlightedWord={t("Contactez", "Contact")}
+            subtitle={t(
+              "Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets géotechniques.",
+              "Our team of experts is available to answer all your questions and support you with your geotechnical projects."
+            )}
           />
         </div>
       </section>
@@ -144,10 +151,13 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-bold text-foreground mb-4">
-              Notre <span className="text-gradient">Localisation</span>
+              {t("Notre ", "Our ")}<span className="text-gradient">{t("Localisation", "Location")}</span>
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Situés à Cité La Gazelle, Ariana, nous sommes facilement accessibles depuis tout le Grand Tunis.
+              {t(
+                "Situés à Cité La Gazelle, Ariana, nous sommes facilement accessibles depuis tout le Grand Tunis.",
+                "Located in Cité La Gazelle, Ariana, we are easily accessible from anywhere in Greater Tunis."
+              )}
             </p>
           </motion.div>
 
@@ -198,10 +208,13 @@ export default function ContactPage() {
               transition={{ type: "spring", stiffness: 150 }}
               className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6"
             >
-              Prêt à Démarrer Votre Projet?
+              {t("Prêt à Démarrer Votre Projet ?", "Ready to Start Your Project?")}
             </motion.h3>
             <p className="text-primary-foreground/80 mb-10 max-w-2xl mx-auto text-lg">
-              Contactez-nous dès aujourd'hui pour discuter de vos besoins et obtenir un devis personnalisé.
+              {t(
+                "Contactez-nous dès aujourd'hui pour discuter de vos besoins et obtenir un devis personnalisé.",
+                "Contact us today to discuss your needs and get a personalized quote."
+              )}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -212,7 +225,7 @@ export default function ContactPage() {
                 className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg"
               >
                 <Phone className="w-5 h-5" />
-                Appelez-nous
+                {t("Appelez-nous", "Call us")}
               </motion.a>
               <motion.a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=egg.brahim@gmail.com&su=Demande%20de%20renseignements%20-%20EGG"
@@ -223,7 +236,7 @@ export default function ContactPage() {
                 className="inline-flex items-center gap-3 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-primary-foreground/10"
               >
                 <Mail className="w-5 h-5" />
-                Envoyez un Email
+                {t("Envoyez un Email", "Send an Email")}
                 <ArrowRight className="w-4 h-4" />
               </motion.a>
             </div>

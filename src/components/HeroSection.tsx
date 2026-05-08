@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useT } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/drilling-hero.png";
 import project1 from "@/assets/projects/sondage-essais.jpg";
 import project2 from "@/assets/projects/project-2.jpg";
@@ -47,63 +48,41 @@ interface HeroSectionProps {
 }
 export function HeroSection({
   logo = "EGG",
-  navigation = [{
-    label: "Accueil"
-  }, {
-    label: "Services",
-    hasDropdown: true
-  }, {
-    label: "À Propos"
-  }, {
-    label: "Clients"
-  }, {
-    label: "Contact"
-  }],
-  ctaButton = {
-    label: "Contactez-nous",
-    onClick: () => {
-      const element = document.querySelector("#contact");
-      if (element) element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  },
+  navigation,
+  ctaButton,
   title = "Entreprises Géologiques & Géotechniques",
-  subtitle = "Spécialistes en sondages géotechniques, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
+  subtitle,
   primaryAction: primaryActionProp,
   secondaryAction: secondaryActionProp,
-  disclaimer = "Experts en Géotechnique depuis 2011",
-  socialProof = {
-    avatars: [project1, project2, project3],
-    text: "1000+ projets réalisés avec succès"
-  },
-  programs = [{
-    image: project1,
-    category: "Géotechnique",
-    title: "Sondages & Essais En Situ"
-  }, {
-    image: project2,
-    category: "Environnement",
-    title: "Études Environnementales"
-  }, {
-    image: project4,
-    category: "Travaux",
-    title: "Travaux Spéciaux"
-  }, {
-    image: project5,
-    category: "Expertise",
-    title: "Conseil Technique"
-  }],
+  disclaimer,
+  socialProof: socialProofProp,
+  programs: programsProp,
   className,
   children
 }: HeroSectionProps) {
   const navigate = useNavigate();
+  const t = useT();
+  const subtitleText = subtitle ?? t(
+    "Spécialistes en sondages géotechniques, études environnementales et travaux spéciaux. Votre partenaire de confiance en Tunisie.",
+    "Specialists in geotechnical drilling, environmental studies and special works. Your trusted partner in Tunisia."
+  );
+  const disclaimerText = disclaimer ?? t("Experts en Géotechnique depuis 2011", "Geotechnical experts since 2011");
+  const socialProof = socialProofProp ?? {
+    avatars: [project1, project2, project3],
+    text: t("1000+ projets réalisés avec succès", "1000+ successfully completed projects"),
+  };
+  const programs = programsProp ?? [
+    { image: project1, category: t("Géotechnique", "Geotechnics"), title: t("Sondages & Essais In Situ", "Drilling & In-Situ Tests") },
+    { image: project2, category: t("Environnement", "Environment"), title: t("Études Environnementales", "Environmental Studies") },
+    { image: project4, category: t("Travaux", "Works"), title: t("Travaux Spéciaux", "Special Works") },
+    { image: project5, category: t("Expertise", "Expertise"), title: t("Conseil Technique", "Technical Consulting") },
+  ];
   const primaryAction = primaryActionProp ?? {
-    label: "Découvrir nos Services",
+    label: t("Découvrir nos Services", "Discover our Services"),
     onClick: () => navigate("/services")
   };
   const secondaryAction = secondaryActionProp ?? {
-    label: "En savoir plus",
+    label: t("En savoir plus", "Learn more"),
     onClick: () => navigate("/domaines")
   };
   
@@ -135,11 +114,11 @@ export function HeroSection({
         duration: 0.7,
         delay: 0.2
       }} className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="text-foreground">Entreprises</span>
+            <span className="text-foreground">{t("Entreprises", "Geological")}</span>
             <br />
-            <span className="text-gradient">Géologiques &</span>
+            <span className="text-gradient">{t("Géologiques &", "& Geotechnical")}</span>
             <br />
-            <span className="text-foreground">Géotechniques</span>
+            <span className="text-foreground">{t("Géotechniques", "Enterprises")}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -153,7 +132,7 @@ export function HeroSection({
         duration: 0.7,
         delay: 0.3
       }} className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8">
-            {subtitle}
+            {subtitleText}
           </motion.p>
 
           {/* Action Buttons */}
@@ -196,7 +175,7 @@ export function HeroSection({
         duration: 0.7,
         delay: 0.5
       }} className="text-sm text-muted-foreground mb-6">
-              {disclaimer}
+              {disclaimerText}
             </motion.p>}
 
           {/* Social Proof */}
