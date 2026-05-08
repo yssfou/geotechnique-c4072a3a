@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useT } from "@/contexts/LanguageContext";
 import serviceGeotechnique from "@/assets/service-sondage.jpg";
 import serviceEnvironment from "@/assets/service-environment.jpg";
 import serviceTravaux from "@/assets/service-conseil.jpg";
@@ -16,23 +17,24 @@ interface Service {
   title: string;
   description: string;
 }
-const services: Service[] = [{
-  image: serviceGeotechnique,
-  category: "Géotechnique",
-  title: "Sondages Géotechniques",
-  description: "Études de sol approfondies pour vos projets de construction. Analyses précises et rapports détaillés."
-}, {
-  image: serviceEnvironment,
-  category: "Environnement",
-  title: "Études Environnementales",
-  description: "Évaluations d'impact environnemental. Protection des ressources naturelles et conformité réglementaire."
-}, {
-  image: serviceTravaux,
-  category: "Construction",
-  title: "Travaux Spéciaux",
-  description: "Fondations profondes, consolidation des sols et travaux de génie civil spécialisés."
-}];
 export function ServicesSection() {
+  const t = useT();
+  const services: Service[] = [{
+    image: serviceGeotechnique,
+    category: t("Géotechnique", "Geotechnics"),
+    title: t("Sondages Géotechniques", "Geotechnical Drilling"),
+    description: t("Études de sol approfondies pour vos projets de construction. Analyses précises et rapports détaillés.", "In-depth soil studies for your construction projects. Accurate analyses and detailed reports.")
+  }, {
+    image: serviceEnvironment,
+    category: t("Environnement", "Environment"),
+    title: t("Études Environnementales", "Environmental Studies"),
+    description: t("Évaluations d'impact environnemental. Protection des ressources naturelles et conformité réglementaire.", "Environmental impact assessments. Protection of natural resources and regulatory compliance.")
+  }, {
+    image: serviceTravaux,
+    category: t("Construction", "Construction"),
+    title: t("Travaux Spéciaux", "Special Works"),
+    description: t("Fondations profondes, consolidation des sols et travaux de génie civil spécialisés.", "Deep foundations, soil consolidation and specialized civil engineering works.")
+  }];
   return <section id="services" className="py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
@@ -52,14 +54,16 @@ export function ServicesSection() {
         duration: 0.6
       }} className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
-            Ce Que Nous Faisons
+            {t("Ce Que Nous Faisons", "What We Do")}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Nos <span className="text-gradient">Services</span>
+            {t("Nos ", "Our ")}<span className="text-gradient">{t("Services", "Services")}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Découvrez notre gamme complète de services géotechniques et
-            environnementaux, adaptés à vos besoins spécifiques.
+            {t(
+              "Découvrez notre gamme complète de services géotechniques et environnementaux, adaptés à vos besoins spécifiques.",
+              "Discover our complete range of geotechnical and environmental services, tailored to your specific needs."
+            )}
           </p>
         </motion.div>
 

@@ -1,34 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Phone,
-    label: "Téléphone",
-    values: [
-      { text: "+216 97 446 899", subLabel: "Mobile" },
-      { text: "+216 71 762 924", subLabel: "Tel/Fax" },
-    ],
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    values: [{ text: "egg.brahim@gmail.com" }],
-  },
-  {
-    icon: MapPin,
-    label: "Adresse",
-    values: [
-      {
-        text: "Local 1, Impasse Amine Rayhani",
-        subText: "Cité La Gazelle, Ariana 2083, Tunisie",
-      },
-    ],
-  },
-];
+import { useT } from "@/contexts/LanguageContext";
 
 export function ContactSection() {
+  const t = useT();
+  const contactInfo = [
+    {
+      icon: Phone,
+      label: t("Téléphone", "Phone"),
+      values: [
+        { text: "+216 97 446 899", subLabel: "Mobile" },
+        { text: "+216 71 762 924", subLabel: "Tel/Fax" },
+      ],
+    },
+    {
+      icon: Mail,
+      label: t("Email", "Email"),
+      values: [{ text: "egg.brahim@gmail.com", subLabel: undefined as string | undefined }],
+    },
+    {
+      icon: MapPin,
+      label: t("Adresse", "Address"),
+      values: [
+        {
+          text: t("Local 1, Impasse Amine Rayhani", "Office 1, Impasse Amine Rayhani"),
+          subText: t("Cité La Gazelle, Ariana 2083, Tunisie", "Cité La Gazelle, Ariana 2083, Tunisia"),
+        },
+      ],
+    },
+  ];
   return (
     <section id="contact" className="py-24 bg-background relative overflow-hidden">
       {/* Background Decoration */}
@@ -44,14 +45,16 @@ export function ContactSection() {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-primary uppercase tracking-widest">
-            Contactez-Nous
+            {t("Contactez-Nous", "Contact Us")}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Prêt à <span className="text-gradient">Démarrer</span> Votre Projet?
+            {t("Prêt à ", "Ready to ")}<span className="text-gradient">{t("Démarrer", "Start")}</span>{t(" Votre Projet?", " Your Project?")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Notre équipe d'experts est à votre disposition pour répondre à toutes
-            vos questions et vous accompagner dans vos projets.
+            {t(
+              "Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets.",
+              "Our team of experts is available to answer all your questions and support you with your projects."
+            )}
           </p>
         </motion.div>
 
@@ -148,11 +151,13 @@ export function ContactSection() {
 
             <div className="relative z-10 text-center">
               <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
-                Besoin d'une Étude Géotechnique?
+                {t("Besoin d'une Étude Géotechnique?", "Need a Geotechnical Study?")}
               </h3>
               <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-                Contactez-nous dès aujourd'hui pour discuter de votre projet et
-                obtenir un devis personnalisé.
+                {t(
+                  "Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé.",
+                  "Contact us today to discuss your project and get a personalized quote."
+                )}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <motion.a
@@ -162,7 +167,7 @@ export function ContactSection() {
                   className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg"
                 >
                   <Phone className="w-5 h-5" />
-                  Appelez-nous
+                  {t("Appelez-nous", "Call us")}
                 </motion.a>
                 <motion.a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=egg.brahim@gmail.com&su=Demande%20de%20renseignements%20-%20EGG"
@@ -173,7 +178,7 @@ export function ContactSection() {
                   className="inline-flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-primary-foreground/10"
                 >
                   <Mail className="w-5 h-5" />
-                  Envoyez un Email
+                  {t("Envoyez un Email", "Send an Email")}
                 </motion.a>
               </div>
             </div>

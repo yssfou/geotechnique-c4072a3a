@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useT } from "@/contexts/LanguageContext";
 import client1 from "@/assets/clients/client-1.webp";
 import steg from "@/assets/clients/steg.png";
 import client4 from "@/assets/clients/client-4.gif";
@@ -33,6 +34,7 @@ const clients = [
 ];
 
 export const ClientsSection = () => {
+  const t = useT();
   return (
     <section className="py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
@@ -49,13 +51,16 @@ export const ClientsSection = () => {
           className="text-center mb-16"
         >
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Partenaires de confiance
+            {t("Partenaires de confiance", "Trusted Partners")}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Ils Nous Font <span className="text-gradient">Confiance</span>
+            {t("Ils Nous Font ", "They ")}<span className="text-gradient">{t("Confiance", "Trust Us")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Nous sommes fiers de collaborer avec des entreprises et institutions de premier plan
+            {t(
+              "Nous sommes fiers de collaborer avec des entreprises et institutions de premier plan",
+              "We are proud to work with leading companies and institutions"
+            )}
           </p>
         </motion.div>
 
