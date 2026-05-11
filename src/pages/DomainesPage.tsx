@@ -33,12 +33,10 @@ export default function DomainesPage() {
     {
       icon: Mountain,
       title: t("Carrière et Mines", "Quarries & Mines"),
-      description: t("Exploitation de carrières, études géologiques minières, stabilité des talus et gestion des ressources minérales.", "Quarry operation, mining geological studies, slope stability and management of mineral resources."),
+      description: t("Études géologiques minières.", "Mining geological studies."),
       details: [
         t("Études géologiques de gisements", "Geological studies of deposits"),
-        t("Plans d'exploitation de carrières", "Quarry operation plans"),
-        t("Stabilité des talus et fronts de taille", "Slope and quarry-face stability"),
-        t("Contrôle de tir de mines", "Blasting control"),
+        t("Calcul des réserves", "Reserve calculations"),
         t("Études d'impact des exploitations minières", "Mining operation impact studies"),
       ],
       definition: t("L'exploitation des carrières et des mines concerne l'extraction des matériaux et minerais. Elle nécessite des études géologiques approfondies pour optimiser l'exploitation tout en assurant la sécurité.", "Quarry and mine operation involves the extraction of materials and ores. It requires in-depth geological studies to optimize operation while ensuring safety."),
@@ -53,7 +51,6 @@ export default function DomainesPage() {
         t("Études d'impact environnemental (EIE)", "Environmental Impact Assessments (EIA)"),
         t("Diagnostic de pollution", "Pollution diagnostics"),
         t("Dépollution des sites", "Site remediation"),
-        t("Audit environnemental", "Environmental audit"),
         t("Suivi de la qualité des eaux", "Water quality monitoring"),
       ],
       definition: t("Les études environnementales évaluent les impacts d'un projet sur l'écosystème et proposent des mesures d'atténuation. Elles sont obligatoires pour de nombreux projets en Tunisie.", "Environmental studies assess a project's impacts on the ecosystem and propose mitigation measures. They are mandatory for many projects in Tunisia."),
