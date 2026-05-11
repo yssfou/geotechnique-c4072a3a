@@ -12,9 +12,9 @@ const Index = () => {
   const t = useT();
   const domaines = [
     { icon: Pickaxe, title: t("Géotechnique", "Geotechnics"), description: t("Études de sol, sondages carottés et essais in-situ pour vos projets de construction.", "Soil studies, core drilling and in-situ testing for your construction projects."), href: "/domaines" },
-    { icon: Mountain, title: t("Carrière et Mines", "Quarries & Mines"), description: t("Exploitation de carrières, études géologiques minières et stabilité des talus.", "Quarry operation, mining geological studies and slope stability."), href: "/domaines" },
+    { icon: Mountain, title: t("Carrière et Mines", "Quarries & Mines"), description: t("Exploitation de carrières, études géologiques minières et calcul des reserves.", "Quarry operation, mining geological studies and reserve calculation."), href: "/domaines" },
     { icon: Leaf, title: t("Environnement", "Environment"), description: t("Études d'impact environnemental et diagnostic de pollution.", "Environmental impact studies and pollution diagnostics."), href: "/domaines" },
-    { icon: HardHat, title: t("Travaux Spéciaux", "Special Works"), description: t("Fondations profondes, consolidation des sols et injections.", "Deep foundations, soil consolidation and grouting."), href: "/domaines" },
+    { icon: HardHat, title: t("Travaux Spéciaux", "Special Works"), description: t("Fondations profondes et tirant d'ancrage.", "Deep foundations and tie rods."), href: "/domaines" },
   ];
   const methodologie = [
     { icon: Target, step: "01", title: t("Analyse des Besoins", "Needs Analysis"), description: t("Étude approfondie de votre projet et définition des objectifs techniques.", "In-depth study of your project and definition of technical objectives.") },
