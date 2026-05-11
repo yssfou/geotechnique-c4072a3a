@@ -60,7 +60,7 @@ export default function DomainesPage() {
     {
       icon: HardHat,
       title: t("Travaux Spéciaux", "Special Works"),
-      description: t("Conception et réalisation de travaux de génie civil spécialisés : fondations profondes, consolidation des sols, drainage et terrassements.", "Design and execution of specialized civil works: deep foundations, soil consolidation, drainage and earthworks."),
+      description: t("Conception et réalisation de travaux de génie civil spécialisés : fondations profondes, consolidation des sols.", "Design and execution of specialized civil works: deep foundations, soil consolidation."),
       details: [
         t("Micropieux et pieux forés", "Micropiles and bored piles"),
         t("Injection de consolidation", "Consolidation grouting"),
