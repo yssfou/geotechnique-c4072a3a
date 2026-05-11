@@ -51,7 +51,6 @@ export default function DomainesPage() {
         t("Études d'impact environnemental (EIE)", "Environmental Impact Assessments (EIA)"),
         t("Diagnostic de pollution", "Pollution diagnostics"),
         t("Dépollution des sites", "Site remediation"),
-        t("Audit environnemental", "Environmental audit"),
         t("Suivi de la qualité des eaux", "Water quality monitoring"),
       ],
       definition: t("Les études environnementales évaluent les impacts d'un projet sur l'écosystème et proposent des mesures d'atténuation. Elles sont obligatoires pour de nombreux projets en Tunisie.", "Environmental studies assess a project's impacts on the ecosystem and propose mitigation measures. They are mandatory for many projects in Tunisia."),
