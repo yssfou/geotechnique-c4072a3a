@@ -11,13 +11,10 @@ export default function MoyensPage() {
     {
       icon: Truck,
       title: t("Parc de Foreuses", "Drilling Rig Fleet"),
-      count: "6+",
+      count: "11+",
       description: t("Foreuses hydrauliques modernes pour tous types de terrains", "Modern hydraulic drilling rigs for all terrain types"),
       details: [
-        t("Foreuses rotary pour sondages profonds", "Rotary rigs for deep boreholes"),
-        t("Sondeuses carottières diamantées", "Diamond core drilling rigs"),
-        t("Foreuses à percussion", "Percussion drilling rigs"),
-        t("Foreuses sur chenilles tout-terrain", "All-terrain tracked rigs"),
+        t("Toutes les sondeuses sont hydrauliques", "All drilling rigs are hydraulic"),
       ],
     },
     {
@@ -28,8 +25,8 @@ export default function MoyensPage() {
       details: [
         t("Essais de mécanique des sols", "Soil mechanics tests"),
         t("Analyses granulométriques", "Particle-size analysis"),
-        t("Essais de cisaillement", "Shear tests"),
-        t("Essais oedométriques", "Oedometer tests"),
+        t("Essais d'identification", "Identification tests"),
+        t("Oedomètre, cisaillement, Proctor et CBR", "Oedometer, shear, Proctor and CBR"),
       ],
     },
     {
