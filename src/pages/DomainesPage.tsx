@@ -22,7 +22,7 @@ export default function DomainesPage() {
       details: [
         t("Sondages carottés et destructifs", "Core and destructive drilling"),
         t("Essais pressiométriques Ménard", "Ménard pressuremeter tests"),
-        t("Essais au pénétromètre statique/dynamique", "Static / dynamic penetrometer tests"),
+        t("Essais au pénétromètre dynamique", "Dynamic penetrometer tests"),
         t("Études de fondations", "Foundation design studies"),
         t("Reconnaissance géologique", "Geological surveying"),
       ],
@@ -60,7 +60,7 @@ export default function DomainesPage() {
     {
       icon: HardHat,
       title: t("Travaux Spéciaux", "Special Works"),
-      description: t("Conception et réalisation de travaux de génie civil spécialisés : fondations profondes, consolidation des sols, drainage et terrassements.", "Design and execution of specialized civil works: deep foundations, soil consolidation, drainage and earthworks."),
+      description: t("Conception et réalisation de travaux de génie civil spécialisés : fondations profondes, consolidation des sols.", "Design and execution of specialized civil works: deep foundations, soil consolidation."),
       details: [
         t("Micropieux et pieux forés", "Micropiles and bored piles"),
         t("Injection de consolidation", "Consolidation grouting"),
