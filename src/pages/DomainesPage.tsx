@@ -22,7 +22,7 @@ export default function DomainesPage() {
       details: [
         t("Sondages carottés et destructifs", "Core and destructive drilling"),
         t("Essais pressiométriques Ménard", "Ménard pressuremeter tests"),
-        t("Essais au pénétromètre statique/dynamique", "Static / dynamic penetrometer tests"),
+        t("Essais au pénétromètre dynamique", "Dynamic penetrometer tests"),
         t("Études de fondations", "Foundation design studies"),
         t("Reconnaissance géologique", "Geological surveying"),
       ],
