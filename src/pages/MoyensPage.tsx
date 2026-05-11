@@ -25,8 +25,8 @@ export default function MoyensPage() {
       details: [
         t("Essais de mécanique des sols", "Soil mechanics tests"),
         t("Analyses granulométriques", "Particle-size analysis"),
-        t("Essais de cisaillement", "Shear tests"),
-        t("Essais oedométriques", "Oedometer tests"),
+        t("Essais d'identification", "Identification tests"),
+        t("Oedomètre, cisaillement, Proctor et CBR", "Oedometer, shear, Proctor and CBR"),
       ],
     },
     {
