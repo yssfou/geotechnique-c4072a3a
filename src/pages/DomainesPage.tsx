@@ -30,6 +30,7 @@ export default function DomainesPage() {
       objectives: t("Déterminer la nature et les caractéristiques du sol, évaluer la capacité portante, définir le type de fondations adapté et anticiper les risques de tassement.", "Determine soil nature and characteristics, assess bearing capacity, define the appropriate foundation type and anticipate settlement risks."),
       risks: t("Fondations inadaptées, tassements différentiels, glissements de terrain, effondrements, sinistres structurels coûteux.", "Inadequate foundations, differential settlements, landslides, collapses, costly structural damage."),
     },
+    {
       icon: Mountain,
       title: t("Carrière et Mines", "Quarries & Mines"),
       description: t("Études géologiques minières.", "Mining geological studies."),
