@@ -56,8 +56,6 @@ export default function ServicesPage() {
         t("Diagnostic de pollution des sols", "Soil pollution diagnostics"),
         t("Analyse de la qualité des eaux", "Water quality analysis"),
         t("Plans de gestion environnementale", "Environmental management plans"),
-        t("Audits de conformité", "Compliance audits"),
-        t("Suivi environnemental", "Environmental monitoring"),
       ],
     },
     {
