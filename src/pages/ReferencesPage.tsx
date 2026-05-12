@@ -48,7 +48,6 @@ export default function ReferencesPage() {
     { image: slideshow1, title: t("Gvt - Touzeur", "Govt - Tozeur"), category: t("Géotechnique", "Geotechnics"), location: t("Touzeur", "Tozeur"), year: "2024", description: t("#campagne #géotechnique  . Gvt - Touzeur", "Geotechnical campaign — Govt - Tozeur") },
     { image: slideshow2, title: t("Pont de Bizerte", "Bizerte Bridge"), category: t("Environnement", "Environment"), location: "Bizerte", year: "2024", description: t("SRBG pont de Bizerte", "SRBG Bizerte Bridge") },
     { image: slideshow3, title: t("Mosquée Okba Ibn Nafaa", "Okba Ibn Nafaa Mosque"), category: t("Travaux Spéciaux", "Special Works"), location: "Kairouan", year: "2023", description: t("GVt Kairouan. Mosquée Okba Ibn Nafaa", "Govt Kairouan — Okba Ibn Nafaa Mosque") },
-    { image: slideshow4, title: t("Campagne géotechnique Gvt - Touzeur", "Geotechnical campaign — Govt - Tozeur"), category: t("Géotechnique", "Geotechnics"), location: t("Touzeur", "Tozeur"), year: "2023", description: t("Campagne géotechnique Gvt - Touzeur", "Geotechnical campaign — Govt - Tozeur") },
     { image: slideshow5, title: t("Geotechnique-Lac0", "Geotechnics - Lac 0"), category: t("Infrastructure", "Infrastructure"), location: "Lac 0", year: "2023", description: t("campagne géotechnique  Lac 0", "Geotechnical campaign Lac 0") },
     { image: slideshow6, title: "Bizerte", category: t("Géotechnique", "Geotechnics"), location: "Bizerte", year: "2021", description: t("Sondage à la tarière", "Auger drilling") },
   ];

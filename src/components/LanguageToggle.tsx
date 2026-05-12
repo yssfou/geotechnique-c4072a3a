@@ -47,7 +47,7 @@ export function LanguageToggle({ className }: LanguageToggleProps) {
             : "opacity-60 hover:opacity-100"
         )}
       >
-        <span aria-hidden>🇬🇧</span>
+        <span aria-hidden className="text-xs font-bold">EN</span>
       </motion.button>
     </div>
   );
