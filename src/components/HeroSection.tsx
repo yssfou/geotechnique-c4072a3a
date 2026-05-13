@@ -100,9 +100,9 @@ export function HeroSection({
       
 
       {/* Main Content */}
-      {children ? <div className="relative z-10 flex-1 flex items-center justify-center px-6">
+      {children ? <div className="relative z-10 flex-1 flex items-center justify-center px-6 pt-16">
           {children}
-        </div> : <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center max-w-4xl mx-auto">
+        </div> : <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center max-w-4xl mx-auto pt-16">
           {/* Title */}
           <motion.h1 initial={{
         opacity: 0,
